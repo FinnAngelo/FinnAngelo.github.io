@@ -35,7 +35,7 @@ I forked the `jekyll-now` project from
 1. I used TortoiseGit to do the forking -> merging thing, which is very easy.  
 	Its' mostly like <https://help.github.com/articles/merging-an-upstream-repository-into-your-fork/>, but using TortoiseGit to do the work
 	* All the commits etc go to the `master` trunk, because this is a user/organisation site 
-	* I had to merge the `index.html` that I set up for `hello world` which wasn't hard, but I'm still not sure about the MIT License. Do I just append my name onto @BarryClack or do I setup a separate license? Or what?
+	* I had to merge the `index.html` that I set up for `hello world` which wasn't hard, but I'm still not sure about the MIT License. Do I just append my name onto @BarryClark or do I setup a separate license? Or what?
 		* It looks like I leave it EXACTLY as is 
 			ie no change as per the instructions in it. Doh! 
 		* I guess this is a lesson learned for my very first fork!
