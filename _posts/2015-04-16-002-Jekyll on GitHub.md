@@ -1,14 +1,11 @@
 ---
 layout: post
-title: "002. Jekyll on GitHub"
+title: "#002: Jekyll on GitHub"
 published: true
 ---
 
-002. Jekyll on GitHub.md
-==========================
-
 This obviously needs finishing.  
-I need to enter the cname stuff etc
+I need to enter the `cname` stuff etc
 
 ------------------
 Setup GitHub pages
