@@ -1,8 +1,8 @@
 ---
-published: false
+layout: post
+title: "#003: Data Annotations for validation"
+published: true
 ---
-
-#003: Data Annotations for validation
 
 I was playing with this tonight, and quite liked how simple it all is:
 
