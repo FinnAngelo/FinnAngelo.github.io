@@ -5,7 +5,7 @@ published: true
 ---
 
 Check it out!  
-<//http://stackoverflow.com/questions/3782678/how-can-i-use-the-data-validation-attributes-in-c-sharp-in-a-non-asp-net-context>
+<http://stackoverflow.com/questions/3782678/how-can-i-use-the-data-validation-attributes-in-c-sharp-in-a-non-asp-net-context>
 
 I was playing with this tonight, and quite liked how simple it all is:
 
