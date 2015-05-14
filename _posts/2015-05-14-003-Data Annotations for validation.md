@@ -3,10 +3,6 @@ layout: post
 title: "#003: Data Annotations for validation"
 published: true
 ---
-
-Check it out!  
-<http://stackoverflow.com/questions/3782678/how-can-i-use-the-data-validation-attributes-in-c-sharp-in-a-non-asp-net-context>
-
 I think the data annotations (sometimes known as `System.ComponentModel.DataAnnotations`) is a great idea; in the past I have played around with custom validation rules, but it was always difficult to find out how to trigger the validation event when you weren't in an asp.net page (webforms or mvc)  
 I was playing with this tonight, and quite liked how simple it all is:
 
@@ -31,18 +27,17 @@ namespace TestingNamespace
         public void TryValidate_Test()
         {
             //given 
-            var tw = new TestObject();
+            var t = new TestObject();
+            var vc = new ValidationContext(t, null, null);
+            var validationResults = new List<ValidationResult>();
             
             //when
-            var vc = new ValidationContext(tw, null, null);
-
-            var validationResults = new List<ValidationResult>();
-            var result = Validator.TryValidateObject(tw, vc, validationResults, true);
+            var result = Validator.TryValidateObject(t, vc, validationResults, true);
 
             //then
-            Assert.IsNotNull(result);
+            Assert.AreEqual(false, result, "Obviously failed validation");
             Assert.IsNotNull(validationResults);
-            Assert.AreEqual(1, validationResults.Count);
+            Assert.AreEqual(1, validationResults.Count, "It only includes the 'required' validation");
         }
     }
 
@@ -55,3 +50,5 @@ namespace TestingNamespace
 }
 ```
 
+References:   
+<http://stackoverflow.com/questions/3782678/how-can-i-use-the-data-validation-attributes-in-c-sharp-in-a-non-asp-net-context>
