@@ -7,7 +7,7 @@ I think the data annotations (sometimes known as `System.ComponentModel.DataAnno
 I was playing with this tonight, and quite liked how simple it all is:
 
 -----------------------
-DataAnnotation_Tests.cs
+DataAnnotationTests.cs
 -----------------------
 
 ```csharp
