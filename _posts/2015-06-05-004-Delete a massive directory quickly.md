@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "#004: Delete a massive directoy quickly with a batch file"
+title: "#004: Delete a massive directory quickly with a batch file"
 published: true
 ---
 I was at work a couple of years ago, waiting while some directory with zillions of images (or something like that) 
