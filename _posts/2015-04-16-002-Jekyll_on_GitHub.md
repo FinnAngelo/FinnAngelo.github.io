@@ -4,7 +4,7 @@ title: "#002: Setup Jekyll on GitHub"
 published: true
 ---
 
-This obviously needs finishing.  
+<a href="https://www.flickr.com/photos/128224075@N02/15653170045" title="Jeckyll &amp; Hyde by Killa Tequilla, on Flickr" style="float:left;"><img src="https://c2.staticflickr.com/4/3935/15653170045_be0453e4d8_k.jpg" width="1152" height="2048" alt="Jeckyll &amp; Hyde"></a>This obviously needs finishing.  
 I need to enter the `cname` stuff etc
 
 ------------------
