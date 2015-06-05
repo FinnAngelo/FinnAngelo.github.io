@@ -4,9 +4,11 @@ title: "#002: Setup Jekyll on GitHub"
 published: true
 ---
 
-<a href="https://www.flickr.com/photos/farfocusimagecom/17936011375" title="FREE BLOG PICTURE : Robert-Louis-Stevenson by Gerard Ferry, on Flickr"><img src="https://c1.staticflickr.com/9/8848/17936011375_2a02cd0180_z.jpg" width="640" height="512" alt="FREE BLOG PICTURE : Robert-Louis-Stevenson"></a>  
-This obviously needs finishing.  
-I need to enter the `cname` stuff etc
+<a href="https://www.flickr.com/photos/farfocusimagecom/17936011375" title="FREE BLOG PICTURE : Robert-Louis-Stevenson by Gerard Ferry, on Flickr"><img src="https://c1.staticflickr.com/9/8848/17936011375_2a02cd0180_z.jpg" width="640" height="512" alt="FREE BLOG PICTURE : Robert-Louis-Stevenson"></a>
+
+If you look at the broken history displayed on my twitter feed, I have posted a number of blog posts on wordpress... and ghost... and yeah.
+
+I have been looking for a blog tool that keeps history and uses markdown and is simple to use, transparent with what I have done and deleted and... it's just [Github pages](https://pages.github.com/), ok?
 
 ------------------
 Setup GitHub pages
@@ -24,7 +26,8 @@ Use this to setup a static site on github:
 
 ### Gotchas ###
 
-1. I initially set the repository name to just `finnangelo` which obviously didn't work. Fortunately it's easy to rename a repository in GitHub, under settings
+1. I initially set the repository name to just `finnangelo` which obviously didn't work. Fortunately it's 
+	easy to rename a repository in GitHub, under settings
 
 ------------------------
 Setup Jekyll onto GitHub
@@ -73,7 +76,11 @@ Setup <http://www.finnangelo.com> to point to <http://finnangelo.github.io>
 
 <https://help.github.com/articles/adding-a-cname-file-to-your-repository/>
 
-1.
+### Gotchas ###
+
+1. I haven't set up the `cname` properly at all - every time I update this github repostitory I get an email 
+	pointing this out. It's kind of embarrassing that I haven't fixed this, but its nice that they show 
+	they care.
 
 ---------------------------------
 Setup Jekyll with GitHub Settings
