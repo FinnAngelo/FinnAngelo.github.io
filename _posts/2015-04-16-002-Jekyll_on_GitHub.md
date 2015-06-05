@@ -4,7 +4,8 @@ title: "#002: Setup Jekyll on GitHub"
 published: true
 ---
 
-<a href="https://www.flickr.com/photos/128224075@N02/15653170045" title="Jeckyll &amp; Hyde by Killa Tequilla, on Flickr" style="float:left; margin-right:3em;"><img src="https://c2.staticflickr.com/4/3935/15653170045_be0453e4d8_k.jpg" width="300" alt="Jeckyll &amp; Hyde"></a>This obviously needs finishing.  
+<a href="https://www.flickr.com/photos/farfocusimagecom/17936011375" title="FREE BLOG PICTURE : Robert-Louis-Stevenson by Gerard Ferry, on Flickr"><img src="https://c1.staticflickr.com/9/8848/17936011375_2a02cd0180_z.jpg" width="640" height="512" alt="FREE BLOG PICTURE : Robert-Louis-Stevenson"></a>  
+This obviously needs finishing.  
 I need to enter the `cname` stuff etc
 
 ------------------
@@ -80,4 +81,12 @@ Setup Jekyll with GitHub Settings
 
 Bit nervous about this...
 
+---
+Fin
+---
+
+I am glad I could use the picture of Robert for the head of this article - apparently he was the nicest guy that ever lived in Scotland.
+
+As a bonus, I just loved this image... it totally did'nt work for the header, but it's just a great picture:
+<a href="https://www.flickr.com/photos/128224075@N02/15653170045" title="Jeckyll &amp; Hyde by Killa Tequilla, on Flickr" style="float:left; margin-right:3em;"><img src="https://c2.staticflickr.com/4/3935/15653170045_be0453e4d8_k.jpg" width="300" alt="Jeckyll &amp; Hyde"></a>
 
