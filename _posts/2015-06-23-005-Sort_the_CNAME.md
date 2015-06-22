@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "#005: Sort the CNAME of http://www.finnangelo.com"
-published: false
+published: true
 ---
 Groan. 
 
@@ -19,3 +19,7 @@ I had this all set up with the `CNAME` file in the `FinnAgelo.github.io` root, b
 01. In my Zone Management pages with my domain provider, I had added 2 `A` records with the <pages.github.com> IP Addresses
 02. I found they belonged to that url with the classic `ping -a 192.30.252.153` on the cmd line, but I could just as easily have looked up https://help.github.com/articles/tips-for-configuring-an-a-record-with-your-dns-provider/ 
 03. I deleted them
+04. I tried to add a cname, but my domain provider needs an mx hostname?
+05. And I'm still getting the emails - I might have to wait until the propagation is finished...?
+
+Obviously, this post is a work in progress...
