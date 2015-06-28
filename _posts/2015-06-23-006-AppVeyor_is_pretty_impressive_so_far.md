@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "#006: AppVeyor is pretty impressive so far"
-published: true
+published: false
 ---
 
 Build tools and err... stuff
