@@ -24,9 +24,10 @@ I had this all set up with the `CNAME` file in the `FinnAgelo.github.io` root, b
 06. Groan. My DNS recoreds and stuff are actually located at Namecheap, not my name provider...
 07. Got to Namechaeap > Login > Menu > Manage Domains > FreeDNS.Hosted Domains
 08. https://www.namecheap.com/support/knowledgebase/article/settingup_hostrecords 
-09. | Hostname | IP Address URL              | Record Type     | MX Pref  |
-    | -------- | --------------------------- | --------------- |--------- |
-    | @        | http://www.finnangelo.com.  | URL Redirect    | NA       |
-    | www      | finnangelo.github.io.       | CNAME (alias)   | NA       |
+09. 
+    | Hostname | IP Address URL              | Record Type     | MX Pref  |  
+    | -------- | --------------------------- | --------------- |--------- |  
+    | @        | http://www.finnangelo.com.  | URL Redirect    | NA       |  
+    | www      | finnangelo.github.io.       | CNAME (alias)   | NA       |  
 
 Let see if this works...
