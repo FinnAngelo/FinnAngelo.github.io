@@ -24,7 +24,7 @@ I had this all set up with the `CNAME` file in the `FinnAgelo.github.io` root, b
 
 Hah! My DNS recoreds and stuff are actually located at Namecheap, not my domain provider...
 
-01. Got to Namechaeap > Login > Menu > Manage Domains > FreeDNS.Hosted Domains
+01. Got to namecheap > Login > Menu > Manage Domains > FreeDNS.Hosted Domains
 02. https://www.namecheap.com/support/knowledgebase/article/settingup_hostrecords 
 03. 
 ```
@@ -34,4 +34,4 @@ Hah! My DNS recoreds and stuff are actually located at Namecheap, not my domain 
 | www      | finnangelo.github.io.       | CNAME (alias)   | NA       |  
 ```
 
-And it updates without sending me the `A record` error - fantastic!
+And it updates _without_ sending me the `A Record` error - fantastic!
