@@ -26,11 +26,12 @@ Hah! My DNS recoreds and stuff are actually located at Namecheap, not my domain 
 
 01. Got to Namechaeap > Login > Menu > Manage Domains > FreeDNS.Hosted Domains
 02. https://www.namecheap.com/support/knowledgebase/article/settingup_hostrecords 
-03. ```
-    | Hostname | IP Address URL              | Record Type     | MX Pref  |  
-    | -------- | --------------------------- | --------------- |--------- |  
-    | @        | http://www.finnangelo.com.  | URL Redirect    | NA       |  
-    | www      | finnangelo.github.io.       | CNAME (alias)   | NA       |  
-    ```
+03. 
+```
+| Hostname | IP Address URL              | Record Type     | MX Pref  |  
+| -------- | --------------------------- | --------------- |--------- |  
+| @        | http://www.finnangelo.com.  | URL Redirect    | NA       |  
+| www      | finnangelo.github.io.       | CNAME (alias)   | NA       |  
+```
 
 And it updates without sending me the `A record` error - fantastic!
