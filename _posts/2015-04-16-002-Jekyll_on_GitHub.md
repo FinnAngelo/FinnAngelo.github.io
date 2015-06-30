@@ -4,7 +4,7 @@ title: "#002: Setup Jekyll on GitHub"
 published: true
 ---
 
-<a href="https://www.flickr.com/photos/farfocusimagecom/17936011375" title="FREE BLOG PICTURE : Robert-Louis-Stevenson by Gerard Ferry, on Flickr"><img src="https://c1.staticflickr.com/9/8848/17936011375_2a02cd0180_z.jpg" width="640" height="512" alt="FREE BLOG PICTURE : Robert-Louis-Stevenson"></a>
+<a href="https://en.wikipedia.org/wiki/Robert_Louis_Stevenson" title="Robert Lewis Stevenson - Writer of cool stuff and all round nice guy"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Robert_Louis_StevensonJune_1885.jpg/200px-Robert_Louis_StevensonJune_1885.jpg" alt="Robert-Louis-Stevenson"></a>
 
 If you look at the broken history displayed on my twitter feed, I have posted a number of blog posts on wordpress... and ghost... and yeah.
 
