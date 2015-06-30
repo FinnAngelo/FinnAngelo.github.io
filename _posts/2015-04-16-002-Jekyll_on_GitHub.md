@@ -94,6 +94,6 @@ Fin
 
 I am glad I could use the picture of Robert for the head of this article - apparently he was the nicest guy that ever lived in Scotland.
 
-As a bonus, I just loved this image... it totally did'nt work for the header, but it's just a great picture:
+As a bonus, I just loved this image... it totally didn't work for the header, but it's just a great picture:
 <a href="https://www.flickr.com/photos/128224075@N02/15653170045" title="Jeckyll &amp; Hyde by Killa Tequilla, on Flickr" style="float:left; margin-right:3em;"><img src="https://c2.staticflickr.com/4/3935/15653170045_be0453e4d8_k.jpg" width="300" alt="Jeckyll &amp; Hyde"></a>
 
