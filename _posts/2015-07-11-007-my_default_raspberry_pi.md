@@ -45,8 +45,8 @@ Here's the basics I always do the first time I run the pi
 ```bash
 
 sudo apt-get update 
-sudo apt-get upgrade
-sudo apt-get dist-upgrade 
+sudo apt-get upgrade -y
+sudo apt-get dist-upgrade -y
 sudo raspi-config 
 
 ```
