@@ -38,19 +38,19 @@ sudo nano /etc/network/interfaces
 ```
 
 It took a bit of messing about, but here is the changes to the 
-interfaces file, including wifi:   
-(How to set the `interfaces` file)[https://www.raspberrypi.org/forums/viewtopic.php?&t=42670]
+interfaces file<delete>, including wifi</delete>:   
+[How to set the `interfaces` file](https://www.raspberrypi.org/forums/viewtopic.php?&t=42670)
 
 ```
 auto lo
 
 iface lo inet loopback
 iface eth0 inet static
-address 192.168.0.116
+address 192.168.0.118
 netmask 255.255.255.0
 gateway 192.168.0.1
 
-
+<delete>
 auto wlan0
 allow-hotplug wlan0
 iface wlan0 inet static
@@ -58,7 +58,7 @@ address 192.168.0.118
 netmask 255.255.255.0
 gateway 192.168.0.1
 wpa-passphrase <the password for the wifi>
-wpa-ssid <the SSID for the wifi>
+wpa-ssid <the SSID for the wifi></delete>
 
 ```
 
