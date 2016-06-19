@@ -57,14 +57,17 @@ Install Yeoman
 <http://yeoman.io/learning/index.html>
 
 ```bat
-npm install yo
-npm install generator-bootstrap
+npm install yo bower grunt-cli
 ```
 
 ---------------------------------------------
 Setup dev site
 ---------------------------------------------
 
-01. Create a folder called `BootstrapMe` and copy the `NodeCmd.bat` to it
-02. Run the new `NodeCmd.bat` file
-03. 
+Create a folder called `BootstrapMe` and copy the `NodeCmd.bat` to it
+
+```bat
+yo bootstrap
+```
+
+
