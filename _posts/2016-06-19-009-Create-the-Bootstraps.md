@@ -66,8 +66,9 @@ Setup dev site
 
 Create a folder called `BootstrapMe` and copy the `NodeCmd.bat` to it
 
-```bat
-yo bootstrap
-```
+01. Run `yo` from the new `NodeCmd.bat`
+02. Install the `bootstrap` generator
+03. Run the bootstrap generator
 
+Now WTF do I do to get anything happening?
 
