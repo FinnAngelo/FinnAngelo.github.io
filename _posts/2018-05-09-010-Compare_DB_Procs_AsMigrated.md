@@ -10,26 +10,21 @@ This can be quite slow, but really useful
 -----------------------
 
 ```sql
-
 -- Needs table variables because the information_schema results don't compare nicely. Weird.
 
-declare @DevDB table ([SCHEMA] varchar(255), [NAME] varchar(255), [TYPE] varchar (255), [DEFINITION] varchar(8000))
+DECLARE @DevDB TABLE ([SCHEMA] VARCHAR(255), [NAME] VARCHAR(255), [TYPE] VARCHAR(255), [DEFINITION] VARCHAR(8000))
 
-insert into @DevDB
-SELECT ROUTINE_SCHEMA
-	, ROUTINE_NAME
-	, ROUTINE_TYPE
-	, ROUTINE_DEFINITION
+INSERT INTO @DevDB
+SELECT ROUTINE_SCHEMA, ROUTINE_NAME, ROUTINE_TYPE, ROUTINE_DEFINITION
 FROM DevDB.INFORMATION_SCHEMA.ROUTINES
 
-declare @ProdDB table ([SCHEMA] varchar(255), [NAME] varchar(255), [TYPE] varchar (255), [DEFINITION] varchar(8000))
+DECLARE @ProdDB TABLE ([SCHEMA] VARCHAR(255), [NAME] VARCHAR(255), [TYPE] VARCHAR(255), [DEFINITION] VARCHAR(8000))
 
-insert into @ProdDB
-SELECT ROUTINE_SCHEMA
-	, ROUTINE_NAME
-	, ROUTINE_TYPE
-	, ROUTINE_DEFINITION
+INSERT INTO @ProdDB
+SELECT ROUTINE_SCHEMA, ROUTINE_NAME, ROUTINE_TYPE, ROUTINE_DEFINITION
 FROM ProdDB.INFORMATION_SCHEMA.ROUTINES
+
+-----------------------
 
 SELECT 'DevDB' AS tblName, *
 FROM (
@@ -37,7 +32,9 @@ FROM (
 	EXCEPT	
 	SELECT * FROM @ProdDB
 	) X
+
 UNION ALL
+
 SELECT 'ProdDB' AS tblName, *
 FROM (
 	SELECT * FROM @ProdDB	
@@ -45,5 +42,4 @@ FROM (
 	SELECT * FROM @DevDB
 	) X
 ORDER BY [TYPE], NAME, [SCHEMA], [tblName]
-
 ```
