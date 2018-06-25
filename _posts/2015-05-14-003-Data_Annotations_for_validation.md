@@ -3,7 +3,7 @@ layout: post
 title: "#003: Data Annotations for validation"
 published: true
 ---
-<a href="https://www.flickr.com/photos/tutescin/3797594257" title="Gatekeepers by Matías Ávalos, on Flickr"><img src="../images/003_Door_Guardians.jpg" width="1024" height="479" alt="Gatekeepers"></a>  
+<a href="https://www.flickr.com/photos/tutescin/3797594257" title="Gatekeepers by Matías Ávalos, on Flickr"><img src="images/003_Door_Guardians.jpg" width="1024" height="479" alt="Gatekeepers"></a>  
 I think the data annotations (sometimes known as `System.ComponentModel.DataAnnotations`) is a great idea; in the past I have played around with custom validation rules, but it was always difficult to find out how to trigger the validation event when you weren't in an asp.net page (webforms or mvc)  
 I was playing with this tonight, and quite liked how simple it all is:
 

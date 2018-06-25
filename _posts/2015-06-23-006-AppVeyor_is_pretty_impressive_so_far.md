@@ -4,7 +4,7 @@ title: "#006: AppVeyor is pretty impressive so far"
 published: true
 ---
 
-<a href="https://flic.kr/p/64Qc2m" title="Building to Heaven">![Building to Heaven](https://farm4.staticflickr.com/3566/3325135786_9f28847c3c_z.jpg?zz=1)</a>
+<a href="https://flic.kr/p/64Qc2m" title="Building to Heaven">![Building to Heaven](images/3325135786_9f28847c3c_z.jpg)</a>
 
 Build tools and err... stuff
 
@@ -33,5 +33,5 @@ And my favourite bit.
 Bonus pic
 ---------
 
-<a href="https://flic.kr/p/9YhRK2" title="Building Trust">![Building Trust](https://farm7.staticflickr.com/6005/5887867043_8386af87b1_z.jpg)</a>  
+<a href="https://flic.kr/p/9YhRK2" title="Building Trust">![Building Trust](images/5887867043_8386af87b1_z.jpg)</a>  
 This has **nothing** to do with builds or servers, or anything really. But it's cute.
