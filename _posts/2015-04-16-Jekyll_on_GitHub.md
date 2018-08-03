@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "#002: Setup Jekyll on GitHub"
+title: "Setup Jekyll on GitHub"
 published: true
 ---
 

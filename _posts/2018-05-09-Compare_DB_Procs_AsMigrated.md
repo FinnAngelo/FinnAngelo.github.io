@@ -1,11 +1,13 @@
 ---
 layout: post
-title: "#010: Comparing Stored Procs in different databases"
+title: "Comparing Stored Procs in different databases"
 published: true
 ---
 Sometimes it's a pain with a Dev database and a Prod database to see where it is changed for migrating stored procs. 
 
 This can be quite slow, but really useful
+
+I usually use a restored version of the production database as having a linked server to prod aint right on a dev box
 
 -----------------------
 

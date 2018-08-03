@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "#003: Data Annotations for validation"
+title: "Data Annotations for validation"
 published: true
 ---
 <a href="https://www.flickr.com/photos/tutescin/3797594257" title="Gatekeepers by Matías Ávalos, on Flickr"><img src="images/003_Door_Guardians.jpg" width="1024" height="479" alt="Gatekeepers"></a>  

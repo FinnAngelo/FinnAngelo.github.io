@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "#001: First Post!"
+title: "First Post!"
 published: true
 ---
 

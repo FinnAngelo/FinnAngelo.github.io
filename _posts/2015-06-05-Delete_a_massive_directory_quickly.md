@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "#004: Delete a massive directory quickly with a batch file"
+title: "Delete a massive directory quickly with a batch file"
 published: true
 ---
 <a href="https://www.flickr.com/photos/mell242/46504703" title="Rubbish by mell, on Flickr"><img src="images/004_Graphitti_Oscar.jpg" width="640" height="480" alt="Rubbish"></a>  

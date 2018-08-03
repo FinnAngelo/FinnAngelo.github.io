@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "#006: AppVeyor is pretty impressive so far"
+title: "AppVeyor is pretty impressive so far"
 published: true
 ---
 

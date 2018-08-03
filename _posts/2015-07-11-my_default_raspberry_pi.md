@@ -1,8 +1,10 @@
 ---
 layout: post
-title: "#007: My default Raspberry Pi!"
+title: "My default Raspberry Pi!"
 published: true
 ---
+
+**Update: I now use [PiBakery](http://pibakery.org/) to do the installation, which I need to document**
 
 This is how I setup my Raspberry Pi; this is all documented (lots of times!) elsewhere on 
 the interwebs but I'm still going to document here what I do.
