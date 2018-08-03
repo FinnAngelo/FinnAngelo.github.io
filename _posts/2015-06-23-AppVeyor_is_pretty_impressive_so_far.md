@@ -4,9 +4,13 @@ title: "AppVeyor is pretty impressive so far"
 published: true
 ---
 
-<a href="https://flic.kr/p/64Qc2m" title="Building to Heaven">![Building to Heaven](images/3325135786_9f28847c3c_z.jpg)</a>
+<a href="https://flic.kr/p/64Qc2m" title="Building to Heaven">![Building to Heaven](https://raw.githubusercontent.com/FinnAngelo/FinnAngelo.github.io/master/_posts/images/3325135786_9f28847c3c_z.jpg)</a>
 
-Build tools and err... stuff
+**Update: None of these projects exist anymore, but the sentiment holds.  And I use VSTS now.**
+
+-----------------------
+
+## Build tools and err... stuff ##
 
 I have been playing with [AppVeyor](https://ci.appveyor.com) - as per Hanselman at [AppVeyor - A good continuous integration system is a joy to behold](http://www.hanselman.com/blog/AppVeyorAGoodContinuousIntegrationSystemIsAJoyToBehold.aspx
 ) - and I'm liking it. 
@@ -29,9 +33,9 @@ And my favourite bit.
 * The build badge [![Build status](https://ci.appveyor.com/api/projects/status/c7pd6su7824jiuv8?svg=true)](https://ci.appveyor.com/project/FinnAngelo/dalify) is brilliant. It's so _gratifying_ for the ego...  
   This is linking to the build for my [DALify project](https://github.com/FinnAngelo/DALify). 
 
----------
-Bonus pic
----------
+-----------------------
 
-<a href="https://flic.kr/p/9YhRK2" title="Building Trust">![Building Trust](images/5887867043_8386af87b1_z.jpg)</a>  
+## Bonus pic ##
+
+<a href="https://flic.kr/p/9YhRK2" title="Building Trust">![Building Trust](https://raw.githubusercontent.com/FinnAngelo/FinnAngelo.github.io/master/_posts/images/5887867043_8386af87b1_z.jpg)</a>  
 This has **nothing** to do with builds or servers, or anything really. But it's cute.
