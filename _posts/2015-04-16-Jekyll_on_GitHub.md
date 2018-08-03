@@ -4,7 +4,7 @@ title: "Setup Jekyll on GitHub"
 published: true
 ---
 
-<a href="https://en.wikipedia.org/wiki/Robert_Louis_Stevenson" title="Robert Lewis Stevenson - Writer of cool stuff and all round nice guy" style="float:left; margin-right:3em;"><img src="https://github.com/FinnAngelo/FinnAngelo.github.io/raw/master/_posts/images/360px-Robert_Louis_Stevenson_by_Henry_Walter_Barnett_bw.jpg" alt="Robert-Louis-StevensonN"></a>
+<a href="https://en.wikipedia.org/wiki/Robert_Louis_Stevenson" title="Robert Lewis Stevenson - Writer of cool stuff and all round nice guy" style="float:right; margin-left:3em;"><img src="https://github.com/FinnAngelo/FinnAngelo.github.io/raw/master/_posts/images/360px-Robert_Louis_Stevenson_by_Henry_Walter_Barnett_bw.jpg" alt="Robert-Louis-StevensonN"></a>
 
 If you look at the broken history displayed on my twitter feed, I have posted a number of blog posts on wordpress... and ghost... and yeah.
 
@@ -85,6 +85,6 @@ Bit nervous about this...
 
 I am glad I could use the picture of Robert for the head of this article - apparently he was the nicest guy that ever lived in Scotland.
 
-As a bonus, I just loved this image... it totally didn't work for the header, but it's just a great picture:  
-<a href="https://www.flickr.com/photos/128224075@N02/15653170045" title="Jekyll &amp; Hyde by Killa Tequilla, on Flickr" style="float:left; margin-right:3em;"><img src="https://github.com/FinnAngelo/FinnAngelo.github.io/raw/master/_posts/images/Lego_Jekyll.jpg" width="300" alt="Jeckyll &amp; Hyde"></a>
+<a href="https://www.flickr.com/photos/128224075@N02/15653170045" title="Jekyll &amp; Hyde by Killa Tequilla, on Flickr" style="float:right; margin-left:3em;"><img src="https://github.com/FinnAngelo/FinnAngelo.github.io/raw/master/_posts/images/Lego_Jekyll.jpg" width="300" alt="Jeckyll &amp; Hyde"></a>
+As a bonus, this totally didn't work for the header, but it's just a great picture:  
 
