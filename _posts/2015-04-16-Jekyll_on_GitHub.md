@@ -10,9 +10,7 @@ If you look at the broken history displayed on my twitter feed, I have posted a 
 
 I have been looking for a blog tool that keeps history and uses markdown and is simple to use, transparent with what I have done and deleted and... it's just [Github pages](https://pages.github.com/), ok?
 
-------------------
-Setup GitHub pages
-------------------
+## Setup GitHub pages ##
 
 <https://pages.github.com/>
 
@@ -29,9 +27,7 @@ Use this to setup a static site on github:
 1. I initially set the repository name to just `finnangelo` which obviously didn't work. Fortunately it's 
 	easy to rename a repository in GitHub, under settings
 
-------------------------
-Setup Jekyll onto GitHub
-------------------------
+## Setup Jekyll onto GitHub ##
 
 I forked the `jekyll-now` project from 
 <https://github.com/barryclark/jekyll-now>
@@ -66,9 +62,7 @@ git push -u --force origin master
 
 ```
 
----------------------------------------------------------------------------
-Setup <http://www.finnangelo.com> to point to <http://finnangelo.github.io>
----------------------------------------------------------------------------
+## Setup <http://www.finnangelo.com> to point to <http://finnangelo.github.io> ##
 
 <https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/>
 
@@ -81,19 +75,16 @@ Setup <http://www.finnangelo.com> to point to <http://finnangelo.github.io>
 1. I haven't set up the `cname` properly at all - every time I update this github repostitory I get an email 
 	pointing this out. It's kind of embarrassing that I haven't fixed this, but its nice that they show 
 	they care.
+2. It looks like images in GitHub need a full path. Oh well.
 
----------------------------------
-Setup Jekyll with GitHub Settings
----------------------------------
+## Setup Jekyll with GitHub Settings ##
 
 Bit nervous about this...
 
----
-Fin
----
+## Fin ##
 
 I am glad I could use the picture of Robert for the head of this article - apparently he was the nicest guy that ever lived in Scotland.
 
 As a bonus, I just loved this image... it totally didn't work for the header, but it's just a great picture:  
-<a href="https://www.flickr.com/photos/128224075@N02/15653170045" title="Jeckyll &amp; Hyde by Killa Tequilla, on Flickr" style="float:left; margin-right:3em;"><img src="images/002_Lego_Jekyll.jpg" width="300" alt="Jeckyll &amp; Hyde"></a>
+<a href="https://github.com/FinnAngelo/FinnAngelo.github.io/raw/master/_posts/images/Lego_Jekyll.jpg" title="Jeckyll &amp; Hyde by Killa Tequilla, on Flickr" style="float:left; margin-right:3em;"><img src="images/002_Lego_Jekyll.jpg" width="300" alt="Jeckyll &amp; Hyde"></a>
 
