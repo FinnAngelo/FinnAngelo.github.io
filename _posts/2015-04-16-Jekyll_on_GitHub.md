@@ -4,7 +4,7 @@ title: "Setup Jekyll on GitHub"
 published: true
 ---
 
-<a href="https://en.wikipedia.org/wiki/Robert_Louis_Stevenson" title="Robert Lewis Stevenson - Writer of cool stuff and all round nice guy"><img src="{{ BASE_PATH }}images/Robert_Louis_StevensonJune_1885.jpg" alt="Robert-Louis-Stevenson"></a>
+<a href="https://en.wikipedia.org/wiki/Robert_Louis_Stevenson" title="Robert Lewis Stevenson - Writer of cool stuff and all round nice guy"><img src="{{ IMAGES_PATH }}/Robert_Louis_StevensonJune_1885.jpg" alt="Robert-Louis-StevensonN"></a>
 
 If you look at the broken history displayed on my twitter feed, I have posted a number of blog posts on wordpress... and ghost... and yeah.
 
