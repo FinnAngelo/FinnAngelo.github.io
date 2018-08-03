@@ -18,6 +18,7 @@ title: Jon Finn Angelo
 description: >- # this means to ignore newlines until "baseurl:"
   Looking at .Net, Tomfoolery and Japes
 baseurl: "" # the subpath of your site, e.g. /blog
+BASE_PATH: "https://github.com/FinnAngelo/FinnAngelo.github.io/raw/master/_posts/" # the subpath of your site, e.g. /blog
 url: "http://www.finnangelo.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jonfinnangelo
 github_username:  finnangelo
