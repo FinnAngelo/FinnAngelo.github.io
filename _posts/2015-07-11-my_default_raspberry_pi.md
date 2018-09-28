@@ -33,10 +33,13 @@ the [FinnAngelo/BuildServer project](https://github.com/FinnAngelo/BuildServer).
 	* I used to use the [Advanced IP Scanner](http://www.radmin.com/products/ipscanner/) but it's 
 	  easier to just use my router (under mac filtering) - its mac address web page is good enough 
 	  and anyway, later on I set the ip of the Pi to a static address.
-* Remote in with ssh using Putty - I use [Putty Portable](http://portableapps.com/apps/internet/putty_portable)
+	* To find my router
+		01. Run `ipconfig` in a cmd window
+		02. Use the ip address of the `Default Gateway` in a browser
+03. Remote in with ssh using Putty - I use [Putty Portable](http://portableapps.com/apps/internet/putty_portable)
 	* Hostname/IP Address: `Your IP address`
 	* Port: `22`
-* The Raspbian initial login is
+04. The Raspbian initial login is
 	* username: `pi`
 	* password: `raspberry`
 
