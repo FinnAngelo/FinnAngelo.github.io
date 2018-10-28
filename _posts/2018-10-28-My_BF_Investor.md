@@ -3,7 +3,7 @@ layout: post
 title: "Simple McPimple! Barefoot Investor but with less words"
 published: true
 ---
-Most people know I'm a barefoot investor fan, and they know I wish Scott Pape's editor chopped 97% of the windbag words from his book. 
+Most people know I'm a barefoot investor fan, and they know I wish Scott Pape's editor chopped 97% of the windbag words from his book. <image href='/images/alpaca-985158_960_720.jpg' alt='source:https://pixabay.com/en/alpaca-smile-teeth-fur-funny-farm-985158/' caption='Alpacas. Not that interesting.' style='width:100px;float:right;' />
 
 Here you go. A solution:
 
