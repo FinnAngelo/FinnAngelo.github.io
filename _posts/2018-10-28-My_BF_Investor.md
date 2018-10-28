@@ -1,9 +1,14 @@
 ---
 layout: post
-title: "Simple McPimple! Barefoot Investor but with less words"
+title: "Simple McPimple! Barefoot Investor and with less words"
 published: true
 ---
-<a href="https://pixabay.com/en/alpaca-smile-teeth-fur-funny-farm-985158/" title="Alpacas are not that interesting" style="float:right; margin-left:3em; width:50%;"><img src="https://github.com/FinnAngelo/FinnAngelo.github.io/raw/master/_posts/images/alpaca-985158_960_720.jpg" alt="Alpaca" caption="Alpacas are not that interesting. " /></a>
+<figure style="float:right; margin-left:3em; width:50%;">
+	<a href="https://pixabay.com/en/alpaca-smile-teeth-fur-funny-farm-985158/">
+		<img src="https://github.com/FinnAngelo/FinnAngelo.github.io/raw/master/_posts/images/alpaca-985158_960_720.jpg" alt="Alpaca"/>
+	</a>
+	<figcaption>Alpacas are not that interesting.</figcation>
+</figure>	
 Most people know I'm a barefoot investor fan, and they know I wish Scott Pape's editor chopped 97% of the windbag words from his book.
 
 Here you go. A solution:
@@ -35,9 +40,9 @@ So don't be scared.
 
 This looks hard, but it ain't complicated
 
-01. List all your bank accounts, list all your debts
-02. Automate next months bill payments so they go out just after payday
-03. 10-15-20% of your income goes to the automated payments of the "Fire-hose"
+01. **List all your bank accounts, list all your debts**
+02. **Automate next months bill payments so they go out just after payday**
+03. **10-15-20% of your income goes to the automated payments of the "Fire-hose"**
 
 Direct the Fire-hose payments at one thing at a time.  
 
@@ -46,6 +51,8 @@ Direct the Fire-hose payments at one thing at a time.
 03. **Increase your MOJO fund to 2-3 months cash** so you can leave your job if long term unhappy (or other disaster)
 04. **Get into house with 20% of the mortgage as a deposit** (this is obviously deferred for Tanz and me)
 05. **Invest/Pay mortgage faster**
+
+So you have paid your bills, and are fixing your future. You can spend the rest on beer and Russian dolls. Whatever, I don't care. Neither should anyone else.
 
 ----------------------------
 
@@ -66,7 +73,7 @@ You know what I'm saying here. Kill your stinking credit card.
 
 ### Superannuation ###
 
-Scott also says superannuation is _great_ for tax purposes, but management fees _will_ rip you off.
+Scott also says superannuation is great for tax purposes, but management fees _will_ rip you off.
 
 In AU there is HostPlus, while in NZ there is SuperLife.co.nz to sidestep management fees.
 
@@ -76,7 +83,7 @@ In AU there is HostPlus, while in NZ there is SuperLife.co.nz to sidestep manage
 
 ETFs, ETFs, ETFs.
 
-I can't currently invest long term in property, and in AU property is a _terrible_ short term investment. 
+I can't currently invest long term in property, and in AU property is a terrible short term investment. 
 So I've invested in ETFs.
 
 I'm possibly too aggressive in my share portfolio but I looked at the Vanguard 100 portfolio and modeled it on that.  
