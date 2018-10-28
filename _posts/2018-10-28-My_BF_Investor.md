@@ -26,6 +26,8 @@ Most money mistakes are of the 'you get 2% interest instead of 6% interest' kind
 
 So don't be scared.
 
+----------------------------
+
 ### How to fix this crap ###
 
 This looks hard, but it ain't complicated
@@ -41,6 +43,8 @@ Direct the Fire-hose payments at one thing at a time.
 > 03. **Increase your MOJO fund to 2-3 months cash** so you can leave your job if long term unhappy (or other disaster)
 > 04. **Get into house with 20% of the mortgage as a deposit** (this is obviously deferred for Tanz and me)
 > 05. **Invest/Pay mortgage faster**
+
+----------------------------
 
 ### Credit Cards ###
 
