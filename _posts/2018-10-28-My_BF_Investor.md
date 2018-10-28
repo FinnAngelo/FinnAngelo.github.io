@@ -3,7 +3,7 @@ layout: post
 title: "Simple McPimple! Barefoot Investor but with less words"
 published: true
 ---
-<a href="https://pixabay.com/en/alpaca-smile-teeth-fur-funny-farm-985158/" title="Alpacas are not that interesting" style="float:right; margin-left:3em;"><img src="https://github.com/FinnAngelo/FinnAngelo.github.io/raw/master/_posts/images/alpaca-985158_960_720.jpg" alt="Alpaca" caption="Alpacas are not that interesting. " style="width:50%;" ></a>
+<a href="https://pixabay.com/en/alpaca-smile-teeth-fur-funny-farm-985158/" title="Alpacas are not that interesting" style="float:right; margin-left:3em; width:50%;"><img src="https://github.com/FinnAngelo/FinnAngelo.github.io/raw/master/_posts/images/alpaca-985158_960_720.jpg" alt="Alpaca" caption="Alpacas are not that interesting. " /></a>
 Most people know I'm a barefoot investor fan, and they know I wish Scott Pape's editor chopped 97% of the windbag words from his book.
 
 Here you go. A solution:
