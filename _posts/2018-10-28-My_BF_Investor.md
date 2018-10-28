@@ -8,9 +8,9 @@ Most people know I'm a barefoot investor fan, and they know I wish Scott Pape's 
 Here you go. A solution:
 https://barefootinvestor.com/barefoot-steps/
 
-------------------
-Here is MY version
-------------------
+----------------------
+
+##Here is MY version##
 
 For too many years I avoided this money-finance thing. 
 
@@ -26,25 +26,21 @@ Most money mistakes are of the 'you get 2% interest instead of 6% interest' kind
 
 So don't be scared.
 
-----------------------------
-
 ### How to fix this crap ###
 
 This looks hard, but it ain't complicated
 
-01. List all your bank accounts, list all your debts
-02. Automate next months bill payments so they go out just after payday
-03. 10-15-20% of your income goes to the automated payments of the "Fire-hose"
+> 01. List all your bank accounts, list all your debts
+> 02. Automate next months bill payments so they go out just after payday
+> 03. 10-15-20% of your income goes to the automated payments of the "Fire-hose"
 
 Direct the Fire-hose payments at one thing at a time.  
 
-01. **Setup a MOJO account of $2000** for disasters and emergencies.
-02. **Pay Debts** with the Snowball method
-03. **Increase your MOJO fund to 2-3 months cash** so you can leave your job if long term unhappy (or other disaster)
-04. **Get into house with 20% of the mortgage as a deposit** (this is obviously deferred for Tanz and me)
-05. **Invest/Pay mortgage faster**
-
-----------------------------
+> 01. **Setup a MOJO account of $2000** for disasters and emergencies.
+> 02. **Pay Debts** with the Snowball method
+> 03. **Increase your MOJO fund to 2-3 months cash** so you can leave your job if long term unhappy (or other disaster)
+> 04. **Get into house with 20% of the mortgage as a deposit** (this is obviously deferred for Tanz and me)
+> 05. **Invest/Pay mortgage faster**
 
 ### Credit Cards ###
 
