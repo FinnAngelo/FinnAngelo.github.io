@@ -6,11 +6,13 @@ published: true
 Most people know I'm a barefoot investor fan, and they know I wish Scott Pape's editor chopped 97% of the windbag words from his book. 
 
 Here you go. A solution:
+
 https://barefootinvestor.com/barefoot-steps/
 
 ----------------------
 
-##Here is MY version##
+Here is MY version
+------------------
 
 For too many years I avoided this money-finance thing. 
 
