@@ -26,10 +26,10 @@ Note to self - although pre-installed on Windows 10, update it with:
 Install-Module -Name Pester -Force -SkipPublisherCheck
 ```
 
------------------------
+----------------------------------------
 
-Testing ExecutionPolicy
------------------------
+## Testing ExecutionPolicy ##
+
 
 This is a bit goofy, and helpful to explore the ExecutionPolicy stuff in powershell.
 
@@ -67,10 +67,10 @@ Things to notice:
 
 + Setting execution policy at the start, and resetting it at the end
 
-----------------
+----------------------------------------
 
-How Modules work
-----------------
+## How Modules work ##
+
 
 Make a **`Module.Library.ps1`** file:
 
@@ -150,3 +150,7 @@ Things to notice:
 
 Here is the successful test run:  
 ![Powershell - completed run of Module.Tests.ps1](https://github.com/FinnAngelo/FinnAngelo.github.io/raw/master/_posts/images/Completed_Run_of__Module_Tests_ps1.png)
+
+----------------------------------------
+
+_Cheers!_
