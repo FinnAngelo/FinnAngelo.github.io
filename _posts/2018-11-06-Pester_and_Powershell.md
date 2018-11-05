@@ -14,6 +14,7 @@ The transition from using manky old batch files through to powershell hasn't bee
 It's just too easy to whip up a *.bat file and get running, instead of using that fiddly "learnin'" that us programmers are supposed to be good at. 
 
 ------------------------------------------------
+
 Enter [Pester](https://github.com/pester/Pester)
 ------------------------------------------------
 
@@ -26,6 +27,7 @@ Install-Module -Name Pester -Force -SkipPublisherCheck
 ```
 
 -----------------------
+
 Testing ExecutionPolicy
 -----------------------
 
@@ -66,6 +68,7 @@ Things to notice:
 + Setting execution policy at the start, and resetting it at the end
 
 ----------------
+
 How Modules work
 ----------------
 
