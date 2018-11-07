@@ -6,7 +6,7 @@ published: true
 
 **Update: I now use [PiBakery](http://pibakery.org/) to do the installation, which I need to document**
 
------------------------
+----------------------------------------
 
 This is how I setup my Raspberry Pi; this is all documented (lots of times!) elsewhere on 
 the interwebs but I'm still going to document here what I do.
@@ -15,7 +15,7 @@ This is all the stuff I do before I run an install script from one of my github 
 o.k. I haven't made it yet, but I will. I've already created the start of it with 
 the [FinnAngelo/BuildServer project](https://github.com/FinnAngelo/BuildServer).
 
------------------------
+----------------------------------------
 
 ## Installing Raspbian ##
 
@@ -24,7 +24,7 @@ the [FinnAngelo/BuildServer project](https://github.com/FinnAngelo/BuildServer).
     to install the image into your SD card.
 03. Click `Write` to write the image to the SD card
 
------------------------
+----------------------------------------
 
 ## Going headless with **Putty** ##
 
@@ -43,7 +43,7 @@ the [FinnAngelo/BuildServer project](https://github.com/FinnAngelo/BuildServer).
 	* username: `pi`
 	* password: `raspberry`
 
------------------------
+----------------------------------------
 
 ## Initial Setup ##
 

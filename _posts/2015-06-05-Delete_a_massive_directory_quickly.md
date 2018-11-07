@@ -7,7 +7,7 @@ published: true
 I was at work a couple of years ago, waiting while some directory with zillions of images (or something like that) 
 was deleting, and Nick sent me this bat file that makes the delete process a little quicker
 
------------------------
+----------------------------------------
 
 ## Delete_Directory.bat ##
 
@@ -20,7 +20,7 @@ pause
 
 ```
 
------------------------
+----------------------------------------
 
 ## Delete lots of files without the recycle bin ##
 

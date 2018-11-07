@@ -11,12 +11,12 @@ published: true
 </figure>	
 The transition from using manky old batch files through to powershell hasn't been a smooth one for me.  
 
-It's just too easy to whip up a *.bat file and get running, instead of using that fiddly "learnin'" that us programmers are supposed to be good at. 
+It's just too easy to whip up a *.bat file and get running, instead of using that fiddly "learnin" that us programmers are supposed to be good at. 
 
-------------------------------------------------
+----------------------------------------
 
-Enter [Pester](https://github.com/pester/Pester)
-------------------------------------------------
+## Enter [Pester](https://github.com/pester/Pester) ##
+
 
 Yes - the ubiquitous testing framework for powershell. It's been helpful so far...
 

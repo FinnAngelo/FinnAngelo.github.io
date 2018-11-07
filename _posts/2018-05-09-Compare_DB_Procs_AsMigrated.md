@@ -9,7 +9,7 @@ This can be quite slow, but really useful
 
 I usually use a restored version of the production database as having a linked server to prod aint right on a dev box
 
------------------------
+----------------------------------------
 
 ```sql
 -- Needs table variables because the information_schema results don't compare nicely. Weird.
@@ -26,7 +26,9 @@ INSERT INTO @ProdDB
 SELECT ROUTINE_SCHEMA, ROUTINE_NAME, ROUTINE_TYPE, ROUTINE_DEFINITION
 FROM ProdDB.INFORMATION_SCHEMA.ROUTINES
 ```
------------------------
+
+----------------------------------------
+
 ```sql
 SELECT 'DevDB' AS tblName, *
 FROM (
@@ -45,3 +47,5 @@ FROM (
 	) X
 ORDER BY [TYPE], NAME, [SCHEMA], [tblName]
 ```
+
+----------------------------------------

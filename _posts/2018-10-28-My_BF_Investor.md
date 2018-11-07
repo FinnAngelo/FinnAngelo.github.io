@@ -15,10 +15,9 @@ Here you go. A solution:
 
 [https://barefootinvestor.com/barefoot-steps/](https://barefootinvestor.com/barefoot-steps/)
 
-----------------------------
+----------------------------------------
 
-Here is MY version
-------------------
+## Here is MY version ##
 
 For too many years I avoided this money-finance thing. 
 
@@ -34,7 +33,7 @@ Most money mistakes are of the 'you get 2% interest instead of 6% interest' kind
 
 So don't be scared.
 
-----------------------------
+----------------------------------------
 
 ### How to fix this crap ###
 
@@ -54,7 +53,7 @@ Direct the Fire-hose payments at one thing at a time.
 
 So you have paid your bills, and are fixing your future. You can spend the rest on beer and Russian dolls. Whatever, I don't care. Neither should anyone else.
 
-----------------------------
+----------------------------------------
 
 ### Credit Cards ###
 
@@ -69,7 +68,7 @@ Kill your credit card. Kill the stinking thing.
 
 You know what I'm saying here. Kill your stinking credit card.
 
-----------------------------
+----------------------------------------
 
 ### Superannuation ###
 
@@ -77,7 +76,7 @@ Scott also says superannuation is great for tax purposes, but management fees _w
 
 In AU there is HostPlus, while in NZ there is SuperLife.co.nz to sidestep management fees.
 
-----------------------------
+----------------------------------------
 
 ### My Investing ###
 

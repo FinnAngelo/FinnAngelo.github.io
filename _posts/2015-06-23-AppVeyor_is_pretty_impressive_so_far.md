@@ -8,7 +8,7 @@ published: true
 
 **Update: None of these projects exist anymore, but the sentiment holds.  And I use VSTS now.**
 
------------------------
+----------------------------------------
 
 ## Build tools and err... stuff ##
 
@@ -33,7 +33,7 @@ And my favourite bit.
 * The build badge [![Build status](https://ci.appveyor.com/api/projects/status/c7pd6su7824jiuv8?svg=true)](https://ci.appveyor.com/project/FinnAngelo/dalify) is brilliant. It's so _gratifying_ for the ego...  
   This is linking to the build for my [DALify project](https://github.com/FinnAngelo/DALify). 
 
------------------------
+----------------------------------------
 
 ## Bonus pic ##
 
