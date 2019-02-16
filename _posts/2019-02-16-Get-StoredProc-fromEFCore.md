@@ -15,15 +15,21 @@ Oh my, I can never remember the syntax of using the Entity Framework Core to sim
 [TestMethod]
 public async Task GettingMethod_WhenRunProc_ThenIsAResult()
 {
+    //https://docs.microsoft.com/en-us/ef/core/querying/raw-sql
     var optionsBuilder = new DbContextOptionsBuilder<WhateverContext>();
     optionsBuilder.UseSqlServer("Server=(local);Database=WhateverDB;Trusted_Connection=True;");
 
+    // This can come from DI
     using (var context = new WhateverContext(optionsBuilder.Options))
     {
-        // Note: EFCore has a funky way to handle this so 
+    	//These would be passed in by a method
+    	int param1 = 12345;
+	DateTime param2 = DateTime.Today;
+	
+        // Note: EFCore has a funky way to handle the string interpolation so 
         // it isn't prone to sql injection 
         StoredProcResult bob = await context.StoredProc
-            .FromSql("EXEC dbo.StoredProc @Id={0}, @Date={1}", 12345, DateTime.Today)
+            .FromSql($"EXEC dbo.StoredProc @Id={param1}, @Date={param2}")
             .FirstOrDefaultAsync();
 
         Assert.IsNotNull(bob);
@@ -38,6 +44,8 @@ public class WhateverContext : DbContext
     public DbQuery<StoredProcResult> StoredProc { get; set; }
 }
 ```
+
+The `FromSql` method is an extention method on the `StoredProc` property of the `WhateverContext`, which is interesting.
 
 This is wonderfully concise, and note that _we don't have to do the mapping of the results to properties of the StoredProcResult object! Harrah!_
 
