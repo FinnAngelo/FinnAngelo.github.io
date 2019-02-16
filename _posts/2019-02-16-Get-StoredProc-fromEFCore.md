@@ -3,7 +3,7 @@ layout: post
 title: "Get Stored Proc results from EnityFrameworkCore"
 published: true
 ---
-<figure style="float:right; margin-left:3em; width:50%;">
+<figure>
 	<a href="https://upload.wikimedia.org/wikipedia/commons/b/b7/Lorimerlite_framework.JPG">
 		<img src="https://github.com/FinnAngelo/FinnAngelo.github.io/raw/master/_posts/images/Lorimerlite_framework.JPG" alt="Oooo - pretty framework!"/>
 	</a>
