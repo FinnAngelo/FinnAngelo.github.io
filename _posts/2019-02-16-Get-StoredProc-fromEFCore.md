@@ -25,7 +25,7 @@ public async Task GettingMethod_WhenRunProc_ThenIsAResult()
     
     StoredProcResult bob;
 	
-    // context can come from DI
+    // WhateverContext can come from DI
     // Note: EFCore has a funky way to handle the string interpolation so 
     // it isn't prone to sql injection 
     using (var context = new WhateverContext(optionsBuilder.Options))
@@ -34,7 +34,7 @@ public async Task GettingMethod_WhenRunProc_ThenIsAResult()
             .FromSql($"EXEC dbo.StoredProc @Id={param1}, @Date={param2}")
             .FirstOrDefaultAsync();
     }
-    Assert.IsNotNull(bob);
+
     Assert.AreEqual(bob.FIRSTNAME, "Robert");
 }
 
