@@ -19,22 +19,23 @@ public async Task GettingMethod_WhenRunProc_ThenIsAResult()
     var optionsBuilder = new DbContextOptionsBuilder<WhateverContext>();
     optionsBuilder.UseSqlServer("Server=(local);Database=WhateverDB;Trusted_Connection=True;");
 
-    // This can come from DI
+    //These would be passed in by a method
+    int param1 = 12345;
+    DateTime param2 = DateTime.Today;
+    
+    StoredProcResult bob;
+	
+    // context can come from DI
+    // Note: EFCore has a funky way to handle the string interpolation so 
+    // it isn't prone to sql injection 
     using (var context = new WhateverContext(optionsBuilder.Options))
     {
-    	//These would be passed in by a method
-    	int param1 = 12345;
-	DateTime param2 = DateTime.Today;
-	
-        // Note: EFCore has a funky way to handle the string interpolation so 
-        // it isn't prone to sql injection 
-        StoredProcResult bob = await context.StoredProc
+        bob = await context.StoredProc
             .FromSql($"EXEC dbo.StoredProc @Id={param1}, @Date={param2}")
             .FirstOrDefaultAsync();
-
-        Assert.IsNotNull(bob);
-        Assert.AreEqual(bob.FIRSTNAME, "Robert");
     }
+    Assert.IsNotNull(bob);
+    Assert.AreEqual(bob.FIRSTNAME, "Robert");
 }
 
 //StoredProcResult class should be generated
