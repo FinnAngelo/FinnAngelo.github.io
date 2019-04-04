@@ -32,6 +32,10 @@ foreach ($file in $AllVersionFiles)
 }
 ```
 
-Full credit to [Mohit Goyal](https://mohitgoyal.co/2017/09/08/auto-assembly-versioning-in-visual-studio-team-services-or-vsts-build/) for this one!
+----------------------------------------
+
+## Credits ##
+
+Thanks to [Mohit Goyal](https://mohitgoyal.co/2017/09/08/auto-assembly-versioning-in-visual-studio-team-services-or-vsts-build/) for this one!
 
 _Cheers!_
