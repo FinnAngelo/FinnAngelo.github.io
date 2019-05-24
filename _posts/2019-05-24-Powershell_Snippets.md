@@ -14,7 +14,7 @@ This will obviously update as I find more
 ----------------------------------------
 
 + [Filesystem basics](#Filesystem-basics)
-    + [Delete a folder](#Delete a folder)
+    + [Delete a folder](#Delete-a-folder)
     + [Test Net Framework installed](#Test-Net-Framework-installed)
 + [Credits](#Credits)    
 
@@ -23,7 +23,7 @@ This will obviously update as I find more
 ## Filesystem basics ##
 
 ----------------------------------------
-<a name="Delete a folder"></a>
+<a name="Delete-a-folder"></a>
 ### Delete a folder ###
 
 ```powershell
