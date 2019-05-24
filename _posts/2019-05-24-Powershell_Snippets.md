@@ -13,8 +13,9 @@ This will obviously update as I find more
 
 ----------------------------------------
 
-+ Filesystem basics
-    + Delete a folder
++ [Filesystem basics](#Filesystem-basics)
+    + [Delete a folder](#Delete-a-folder)
+    + [Test Net Framework installed](#Test-Net-Framework-installed)
     
 
 ----------------------------------------
