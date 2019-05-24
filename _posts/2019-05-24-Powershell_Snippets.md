@@ -14,16 +14,16 @@ This will obviously update as I find more
 ----------------------------------------
 
 + [Filesystem basics](#Filesystem-basics)
-    + [Delete a folder](#Delete-a-folder)
+    + [Delete a folder](#Delete a folder)
     + [Test Net Framework installed](#Test-Net-Framework-installed)
-    
++ [Credits](#Credits)    
 
 ----------------------------------------
-
+<a name="Filesystem-basics"></a>
 ## Filesystem basics ##
 
 ----------------------------------------
-
+<a name="Delete a folder"></a>
 ### Delete a folder ###
 
 ```powershell
@@ -33,7 +33,7 @@ if (Test-Path -Path $Folder) {
 $Build_SourcesDirectory 
 ```
 
-
+<a name="Test-Net-Framework-installed"></a>
 ### Test Net Framework installed ###
 
 This is a bit crap
@@ -50,7 +50,7 @@ Can test with [mcr.microsoft.com/dotnet/framework/runtime:4.8](https://hub.docke
 
  
 ----------------------------------------
-
+<a name="Credits"></a>
 ## Credits ##
 
 _Cheers!_
