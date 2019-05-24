@@ -46,13 +46,11 @@ Get-Childitem 'HKLM:\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full'
 
 #461814 is for Net472
 
-Can test with https://hub.docker.com/_/microsoft-dotnet-framework-runtime/ 
+Can test with [mcr.microsoft.com/dotnet/framework/runtime:4.8](https://hub.docker.com/_/microsoft-dotnet-framework-runtime/)
 
  
 ----------------------------------------
 
 ## Credits ##
-
-Thanks to [Mohit Goyal](https://mohitgoyal.co/2017/09/08/auto-assembly-versioning-in-visual-studio-team-services-or-vsts-build/) for this one!
 
 _Cheers!_
