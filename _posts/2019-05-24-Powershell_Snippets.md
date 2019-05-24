@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Powershell Snippets"
-published: false
+published: true
 ---
 
 Yeah - I'm lovin' the powerhell goodness...
