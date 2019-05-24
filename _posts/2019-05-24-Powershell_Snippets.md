@@ -12,15 +12,16 @@ I guess this is what the internet is for!
 This will obviously update as I find more 
 
 ----------------------------------------
+
 + [Filesystem basics](#Filesystem-basics)
     + [Delete a folder](#Delete-a-folder)
     + [Test Net Framework installed](#Test-Net-Framework-installed)
 + [Credits](#Credits)    
 
 ----------------------------------------
-<a name="Filesystem-basics">
+<a name="Filesystem-basics"></a>
 ## Filesystem basics ##
-</a>
+    
 ----------------------------------------
 <a name="Delete-a-folder"></a>
 ### Delete a folder ###
