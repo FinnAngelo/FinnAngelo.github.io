@@ -9,6 +9,10 @@ I always forget the config syntax for the really simple built in logging in c#
 It's quick and dirty, and doesn't need 'Yet-Another-Logging-Framework(tm)'.  
 And yeah, for real work I prefer [Serilog](https://serilog.net)
 
+Helpful Hint: Stay away from the `Debug.Write` stuff. It only works in debug mode 
+which is _frekkin' annoying_ when you are on prod and desperately need the logging.  
+Use the log level/filter type in the config.
+
 -----
 Trace
 -----
