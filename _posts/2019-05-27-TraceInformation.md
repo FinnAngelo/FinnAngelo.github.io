@@ -13,9 +13,9 @@ Helpful Hint: Stay away from the `Debug.Write` stuff. It only works in debug mod
 which is _frekkin' annoying_ when you are on prod and desperately need the logging.  
 Use the log level/filter type in the config.
 
------
-Trace
------
+-----------
+## Trace ##
+
 
 ```xml
   <system.diagnostics>
@@ -68,9 +68,9 @@ void Application_Error(object sender, EventArgs e)
 }
 ```
 
------------
-TraceSource
------------
+-----------------
+## TraceSource ##
+
 
 
 ```xml
