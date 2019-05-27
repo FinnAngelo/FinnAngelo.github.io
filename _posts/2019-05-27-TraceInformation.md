@@ -15,6 +15,10 @@ Use the log level/filter type in the config.
 
 -----------
 ## Trace ##
+<<<<<<< HEAD
+=======
+
+>>>>>>> afbd7e962f6dee8b904120874aa17546e36ebc05
 
 ```xml
   <system.diagnostics>
@@ -69,6 +73,11 @@ void Application_Error(object sender, EventArgs e)
 
 -----------------
 ## TraceSource ##
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> afbd7e962f6dee8b904120874aa17546e36ebc05
 
 ```xml
   <system.diagnostics>
