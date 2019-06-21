@@ -10,13 +10,13 @@ This will obviously update as I find more
 
 ----------------------------------------
 
-+ [Taskbar location](#Taskbar-location)
++ [Taskbar directory](#Taskbar-directory)
 + [Chrome incognito shortcut](#Chrome-incognito-shortcut)
 + [Credits](#Credits)    
 
 ----------------------------------------
-<a name="Taskbar-location"></a>
-## Taskbar location ##
+<a name="Taskbar-directory"></a>
+## Taskbar directory ##
 
 So where do all the shortcuts on the taskbar live?
 
@@ -31,7 +31,8 @@ How do I open chrome as incognito from a shortcut?
 Clone a shortcut to chrome, and change the `target` field to this:  
 `"C:\Program Files (x86)\Google\Chrome\Application\chrome_proxy.exe" --profile-directory=Default -incognito https://mail.google.com https://www.onenote.com`
 
-Note that it opens **two** web pages in separate tabs - harrah!
+Note that it opens **two** web pages in separate tabs - harrah!  
+I keep the shortcut in the Taskbar directory
     
 ----------------------------------------
 <a name="Credits"></a>
