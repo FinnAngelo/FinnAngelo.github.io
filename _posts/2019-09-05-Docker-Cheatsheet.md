@@ -11,7 +11,7 @@ The useful stuff I use with Docker
 
 + [Setup](#Setup)
   + [Change drive of hyper-v disks](#change-drive-of-hyper-v-disks)
-  + [Change drive of docker images](#change-drive-of-docker-images]
+  + [Change drive of docker images](#change-drive-of-docker-images)
 + [docker pull](#docker-pull)
 + [docker container](#docker-container)
 + [docker image](#docker-image)
