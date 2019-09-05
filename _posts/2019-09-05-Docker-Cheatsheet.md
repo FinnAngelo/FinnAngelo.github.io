@@ -11,6 +11,7 @@ The useful stuff I use with Docker
 
 + [Setup](#Setup)
   + [Change drive of hyper-v disks](#change-drive-of-hyper-v-disks)
+  + [Change drive of docker images](#change-drive-of-docker-images]
 + [docker pull](#docker-pull)
 + [docker container](#docker-container)
 + [docker image](#docker-image)
@@ -34,6 +35,16 @@ This does slow performance as my `D:` drive isn't an SSD, but my `C:` drive is a
     ```powershell
     docker run -di --rm --name test mcr.microsoft.com/dotnet/framework/sdk
     ```
+### Change drive of docker images ###
+
+<https://www.pbworks.net/change-docker-images-location-in-windows/>
+
+01. Stop docker
+02. Purge all the images, because is messy to try move them
+03. Create `D:\ProgramData\Docker`
+04. Edit `C:\ProgramData\Docker\config\daemon.json`
+05. Add `"graph": "D:\\ProgramData\\Docker"`
+06. Restart docker
 
 ----------------------------------------
 
