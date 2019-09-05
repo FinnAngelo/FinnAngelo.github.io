@@ -22,7 +22,9 @@ The useful stuff I use with Docker
 
 ### Change drive of hyper-v disks ###
 
-This does slow performance as my `D:` drive isn't an SSD, but my `C:` drive is always low on space!
+This is easier if you do it before installing docker so you don't have to move the `DockerDesktop.vhdx` hard disk
+
+Changing the drive does slow performance as my `D:` drive isn't an SSD, but my `C:` drive is always low on space!
 
 01. Stop docker
 02. create `D:\Users\Public\Public Documents\Hyper-V\Virtual hard disks`
