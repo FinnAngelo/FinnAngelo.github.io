@@ -44,8 +44,10 @@ Changing the drive does slow performance as my `D:` drive isn't an SSD, but my `
 
 <https://www.pbworks.net/change-docker-images-location-in-windows/>
 
-01. Stop docker
-02. Purge all the images, because is messy to try move them
+Do this before you download the first image, evem before the test above
+
+01. Purge all the images, because is messy to try move them
+02. Stop docker
 03. Create `D:\ProgramData\Docker`
 04. Edit `C:\ProgramData\Docker\config\daemon.json`
 05. Add `"graph": "D:\\ProgramData\\Docker"`
