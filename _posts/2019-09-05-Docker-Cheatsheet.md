@@ -35,6 +35,7 @@ This does slow performance as my `D:` drive isn't an SSD, but my `C:` drive is a
     ```powershell
     docker run -di --rm --name test mcr.microsoft.com/dotnet/framework/sdk
     ```
+
 ### Change drive of docker images ###
 
 <https://www.pbworks.net/change-docker-images-location-in-windows/>
@@ -45,6 +46,10 @@ This does slow performance as my `D:` drive isn't an SSD, but my `C:` drive is a
 04. Edit `C:\ProgramData\Docker\config\daemon.json`
 05. Add `"graph": "D:\\ProgramData\\Docker"`
 06. Restart docker
+07. Test with 
+    ```powershell
+    docker pull mcr.microsoft.com/dotnet/framework/sdk
+    ```
 
 ----------------------------------------
 
