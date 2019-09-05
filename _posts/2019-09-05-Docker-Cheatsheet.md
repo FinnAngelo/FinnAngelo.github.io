@@ -10,12 +10,12 @@ The useful stuff I use with Docker
 ----------------------------------------
 
 + [Setup](#Setup)
-  + [Change drive of hyper-v disks](#Change-drive-of-hyper-v-disks)
+  + [Change drive of hyper-v disks](#change-drive-of-hyper-v-disks)
 + [docker pull](#docker-pull)
 + [docker container](#docker-container)
 + [docker image](#docker-image)
 + [docker prune](#docker-prune)
-+ [Credits](#Credits)    
++ [Credits](#credits)    
 
 ## Setup ##
 
