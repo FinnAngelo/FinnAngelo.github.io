@@ -9,11 +9,29 @@ The useful stuff I use with Docker
 
 ----------------------------------------
 
++ [Setup](#Setup)
+  + [Change drive of hyper-v disks](#Change-drive-of-hyper-v-disks)
 + [docker pull](#docker-pull)
 + [docker container](#docker-container)
 + [docker image](#docker-image)
 + [docker prune](#docker-prune)
 + [Credits](#Credits)    
+
+## Setup ##
+
+### Change drive of hyper-v disks ###
+
+01. Stop docker
+02. create `D:\Users\Public\Public Documents\Hyper-V\Virtual hard disks`
+03. Cut/Paste docker hard disk `DockerDesktop.vhdx` from
+`C:\Users\Public\Documents\Hyper-V\Virtual Hard Disks`
+04. Open Hyper-V manager > Select PC > Actions pane > Hyper-V Settings...
+    + Virtual Hard Disks = `D:\Users\Public\Documents\Hyper-V\Virtual Hard Disks`
+05. Restart Docker
+06. Test with  
+    ```powershell
+    docker run -di --rm --name test mcr.microsoft.com/dotnet/framework/sdk
+    ```
 
 ----------------------------------------
 
