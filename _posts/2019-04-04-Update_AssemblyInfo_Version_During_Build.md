@@ -22,12 +22,12 @@ Here is the powershell you can put into a step of the build
 ```powershell
 $AllVersionFiles = Get-ChildItem $(Build.SourcesDirectory) AssemblyInfo.cs -recurse
 
-foreach ($file in $AllVersionFiles) 
-{ 
+foreach ($file in $AllVersionFiles)
+{
     (Get-Content $file.FullName) |
     %{$_ -replace 'AssemblyVersion\("[0-9]+(\.([0-9]+|\*)){1,3}"\)', "AssemblyVersion(""$(Build.BuildNumber)"")" } |
     %{$_ -replace 'AssemblyFileVersion\("[0-9]+(\.([0-9]+|\*)){1,3}"\)', "AssemblyFileVersion(""$(Build.BuildNumber).0"")" } |
-    %{$_ -replace 'AssemblyInformationalVersion\("[0-9]+(\.([0-9]+|\*)){1,3}"\)', "AssemblyInformationalVersion(""$(Build.BuildNumber)"")" } | 
+    %{$_ -replace 'AssemblyInformationalVersion\("[0-9]+(\.([0-9]+|\*)){1,3}"\)', "AssemblyInformationalVersion(""$(Build.BuildNumber)"")" } |
     Set-Content $file.FullName -Force
 }
 ```

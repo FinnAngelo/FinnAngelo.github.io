@@ -9,19 +9,19 @@ Yeah - I'm lovin' the powerhell goodness...
 But I need a way to remember all of these bits and bobs of snippets.  
 I guess this is what the internet is for!
 
-This will obviously update as I find more 
+This will obviously update as I find more
 
 ----------------------------------------
 
 + [Filesystem basics](#Filesystem-basics)
-    + [Delete a folder](#Delete-a-folder)
-    + [Test Net Framework installed](#Test-Net-Framework-installed)
-+ [Credits](#Credits)    
+  + [Delete a folder](#Delete-a-folder)
+  + [Test Net Framework installed](#Test-Net-Framework-installed)
++ [Credits](#Credits)
 
 ----------------------------------------
 <a name="Filesystem-basics"></a>
 ## Filesystem basics ##
-    
+
 ----------------------------------------
 <a name="Delete-a-folder"></a>
 ### Delete a folder ###
@@ -30,7 +30,6 @@ This will obviously update as I find more
 if (Test-Path -Path $Folder) {
     Remove-Item $Folder -Recurse -Force
 }
-$Build_SourcesDirectory 
 ```
 
 <a name="Test-Net-Framework-installed"></a>
@@ -38,7 +37,7 @@ $Build_SourcesDirectory
 
 This is a bit crap
 
-https://docs.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies  
+<https://docs.microsoft.com/en-us/dotnet/framework/migration-guide/versions-and-dependencies>
 
 ```powershell
 Get-Childitem 'HKLM:\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full'
@@ -48,7 +47,6 @@ Get-Childitem 'HKLM:\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full'
 
 Can test with [mcr.microsoft.com/dotnet/framework/runtime:4.8](https://hub.docker.com/_/microsoft-dotnet-framework-runtime/)
 
- 
 ----------------------------------------
 <a name="Credits"></a>
 ## Credits ##

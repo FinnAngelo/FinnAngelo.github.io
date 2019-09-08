@@ -12,7 +12,6 @@ I was playing with this tonight, and quite liked how simple it all is:
 ## DataAnnotationTests.cs ##
 
 ```csharp
-
 //DataAnnotationTests.cs
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -27,11 +26,11 @@ namespace TestingNamespace
         [TestMethod]
         public void TryValidate_Test()
         {
-            //given 
+            //given
             var t = new TestObject();
             var vc = new ValidationContext(t, null, null);
             var validationResults = new List<ValidationResult>();
-            
+
             //when
             var result = Validator.TryValidateObject(t, vc, validationResults, true);
 
@@ -51,5 +50,8 @@ namespace TestingNamespace
 }
 ```
 
-References:   
+----------------------------------------
+
+## References ##
+
 <http://stackoverflow.com/questions/3782678/how-can-i-use-the-data-validation-attributes-in-c-sharp-in-a-non-asp-net-context>

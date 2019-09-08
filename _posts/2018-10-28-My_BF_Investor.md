@@ -4,11 +4,11 @@ title: "Simple McPimple! Barefoot Investor and with less words"
 published: true
 ---
 <figure style="float:right; margin-left:3em; width:50%;">
-	<a href="https://pixabay.com/en/alpaca-smile-teeth-fur-funny-farm-985158/">
-		<img src="https://github.com/FinnAngelo/FinnAngelo.github.io/raw/master/_posts/images/alpaca-985158_960_720.jpg" alt="Alpaca"/>
-	</a>
-	<figcaption>Alpacas are not that interesting.</figcaption>
-</figure>	
+    <a href="https://pixabay.com/en/alpaca-smile-teeth-fur-funny-farm-985158/">
+        <img src="https://github.com/FinnAngelo/FinnAngelo.github.io/raw/master/_posts/images/alpaca-985158_960_720.jpg" alt="Alpaca"/>
+    </a>
+    <figcaption>Alpacas are not that interesting.</figcaption>
+</figure>
 Most people know I'm a barefoot investor fan, and they know I wish Scott Pape's editor chopped 97% of the windbag words from his book.
 
 Here you go. A solution:
@@ -19,9 +19,9 @@ Here you go. A solution:
 
 ## Here is MY version ##
 
-For too many years I avoided this money-finance thing. 
+For too many years I avoided this money-finance thing.
 
-Its _really_ scary. 
+Its _really_ scary.
 
 + Mistakes are expensive.  
 + Ignorance is expensive.  
@@ -87,9 +87,3 @@ So I've invested in ETFs.
 
 I'm possibly too aggressive in my share portfolio but I looked at the Vanguard 100 portfolio and modeled it on that.  
 In retrospect I could have just invested in the Vanguard 100 portfolio. Or the SmartShares version in NZ.
-
-
-
-
-
-

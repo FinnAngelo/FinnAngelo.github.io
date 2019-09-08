@@ -4,10 +4,10 @@ title: "Get Stored Proc results from EnityFrameworkCore"
 published: true
 ---
 <figure>
-	<a href="https://upload.wikimedia.org/wikipedia/commons/b/b7/Lorimerlite_framework.JPG">
-		<img src="https://github.com/FinnAngelo/FinnAngelo.github.io/raw/master/_posts/images/Lorimerlite_framework.JPG" alt="Oooo - pretty framework!"/>
-	</a>
-	<figcaption>This is a pretty framework picture</figcaption>
+  <a href="https://upload.wikimedia.org/wikipedia/commons/b/b7/Lorimerlite_framework.JPG">
+    <img src="https://github.com/FinnAngelo/FinnAngelo.github.io/raw/master/_posts/images/Lorimerlite_framework.JPG" alt="Oooo - pretty framework!"/>
+  </a>
+  <figcaption>This is a pretty framework picture</figcaption>
 </figure>
 Oh my, I can never remember the syntax of using the Entity Framework Core to simply get the results from a database, so here it is:
 
@@ -22,12 +22,12 @@ public async Task GettingMethod_WhenRunProc_ThenIsAResult()
     //These would be passed in by a method
     int param1 = 12345;
     DateTime param2 = DateTime.Today;
-    
+
     StoredProcResult bob;
-	
+
     // WhateverContext can come from DI
-    // Note: EFCore has a funky way to handle the string interpolation so 
-    // it isn't prone to sql injection 
+    // Note: EFCore has a funky way to handle the string interpolation so
+    // it isn't prone to sql injection
     using (var context = new WhateverContext(optionsBuilder.Options))
     {
         bob = await context.StoredProc
@@ -54,7 +54,7 @@ This is wonderfully concise, and note that _we don't have to do the mapping of t
 
 ## Generating the result object ##
 
-But there is a caviet - **the result object properties must match their type to the sql datatypes returned** 
+But there is a caviet - **the result object properties must match their type to the sql datatypes returned**
 
 That would be a pain in the butt, manually creating an object for a stored procedure with 50 columns returned. And yes, too many times I have dealt with legacy code that does exactly that.
 
@@ -71,7 +71,7 @@ DECLARE @SP_Name VARCHAR(250)= '';
 DECLARE @CS_Type VARCHAR(100)= '';
 DECLARE @Column_Name VARCHAR(250)= '';
 DECLARE @Column_Ordinal INT= 0;
-SELECT IDENTITY( INT, 1, 1) AS RowID, 
+SELECT IDENTITY( INT, 1, 1) AS RowID,
        p.NAME AS Sp_Name,
        CASE
            WHEN r.system_type_name = 'bigint'
@@ -126,8 +126,8 @@ SELECT IDENTITY( INT, 1, 1) AS RowID,
                       AND IS_Nullable = 1
                  THEN '?'
                  ELSE ''
-             END AS CS_Type, 
-       replace(ISNULL(r.NAME, 'Unnamed'), ' ', '_') AS Column_Name, 
+             END AS CS_Type,
+       replace(ISNULL(r.NAME, 'Unnamed'), ' ', '_') AS Column_Name,
        r.column_ordinal
 INTO #Tentity
 FROM sys.procedures AS p
@@ -146,9 +146,9 @@ PRINT 'namespace ' + @namespace + '.Models';
 PRINT '{';
 WHILE @counter <= @EnD
     BEGIN
-        SELECT @SP_Name = Sp_Name, 
-               @CS_Type = CS_Type, 
-               @Column_Name = Column_Name, 
+        SELECT @SP_Name = Sp_Name,
+               @CS_Type = CS_Type,
+               @Column_Name = Column_Name,
                @Column_Ordinal = column_ordinal
         FROM #Tentity
         WHERE RowID = @counter;

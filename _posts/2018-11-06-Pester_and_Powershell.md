@@ -4,19 +4,18 @@ title: "Pester and Powershell"
 published: true
 ---
 <figure style="float:right; margin-left:3em; width:50%;">
-	<a href="https://cps-static.rovicorp.com/3/JPG_400/MI0000/090/MI0000090531.jpg">
-		<img src="https://github.com/FinnAngelo/FinnAngelo.github.io/raw/master/_posts/images/BNL_BornOnAPirateShip.jpg" alt="Bare Naked Ladies - Born on a Pirate Ship album cover"/>
-	</a>
-	<figcaption>Fun album, but daaang that kid looks annoying...</figcaption>
-</figure>	
+  <a href="https://cps-static.rovicorp.com/3/JPG_400/MI0000/090/MI0000090531.jpg">
+    <img src="https://github.com/FinnAngelo/FinnAngelo.github.io/raw/master/_posts/images/BNL_BornOnAPirateShip.jpg" alt="Bare Naked Ladies - Born on a Pirate Ship album cover"/>
+  </a>
+  <figcaption>Fun album, but daaang that kid looks annoying...</figcaption>
+</figure>
 The transition from using manky old batch files through to powershell hasn't been a smooth one for me.  
 
-It's just too easy to whip up a *.bat file and get running, instead of using that fiddly "learnin" that us programmers are supposed to be good at. 
+It's just too easy to whip up a *.bat file and get running, instead of using that fiddly "learnin" that us programmers are supposed to be good at.
 
 ----------------------------------------
 
 ## Enter [Pester](https://github.com/pester/Pester) ##
-
 
 Yes - the ubiquitous testing framework for powershell. It's been helpful so far...
 
@@ -29,7 +28,6 @@ Install-Module -Name Pester -Force -SkipPublisherCheck
 ----------------------------------------
 
 ## Testing ExecutionPolicy ##
-
 
 This is a bit goofy, and helpful to explore the ExecutionPolicy stuff in powershell.
 
@@ -70,7 +68,6 @@ Things to notice:
 ----------------------------------------
 
 ## How Modules work ##
-
 
 Make a **`Module.Library.ps1`** file:
 
@@ -120,12 +117,12 @@ Describe 'Explore Powershell Modules' {
   }
 
   Context "Check functions and referenced files" {
-    
+
     It "Given the HelloWorld function, Then there is a result" {
       $result = Get-HelloWorld
       $result | Should Be "Hello World"
     }
-        
+
     It "Given the HelloValue function in a separate file, Then there is a result" {
       $result = Get-HelloValue("Value")
       $result | Should Be "Hello Value"

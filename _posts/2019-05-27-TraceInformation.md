@@ -9,16 +9,13 @@ I always forget the config syntax for the really simple built in logging in c#
 It's quick and dirty, and doesn't need 'Yet-Another-Logging-Framework(tm)'.  
 And yeah, for real work I prefer [Serilog](https://serilog.net)
 
-Helpful Hint: Stay away from the `Debug.Write` stuff. It only works in debug mode 
+Helpful Hint: Stay away from the `Debug.Write` stuff. It only works in debug mode
 which is _frekkin' annoying_ when you are on prod and desperately need the logging.  
 Use the log level/filter type in the config.
 
------------
-## Trace ##
-<<<<<<< HEAD
-=======
+----------------------------------------
 
->>>>>>> afbd7e962f6dee8b904120874aa17546e36ebc05
+## Trace ##
 
 ```xml
   <system.diagnostics>
@@ -27,7 +24,7 @@ Use the log level/filter type in the config.
         <add name="BibiddyBoo" type="System.Diagnostics.TextWriterTraceListener" initializeData="c:\temp\MyProject.log" />
       </listeners>
     </trace>
-  </system.diagnostics> 
+  </system.diagnostics>
 ```
 
 Or with a bit more detail
@@ -48,14 +45,14 @@ Or with a bit more detail
     </sharedListeners>
     <trace autoflush="true" indentsize="8">
       <listeners>
-        <clear/> 
+        <clear/>
         <add name="VerboseListener" />
         <add name="ErrorListener" />
       </listeners>
     </trace>
   </system.diagnostics>
   ```
- 
+
   and it can be used to log unhandled exceptions in web forms with the `Global.asax.cs` file
   
   ```csharp
@@ -71,13 +68,9 @@ void Application_Error(object sender, EventArgs e)
 }
 ```
 
------------------
+----------------------------------------
+
 ## TraceSource ##
-<<<<<<< HEAD
-=======
-
-
->>>>>>> afbd7e962f6dee8b904120874aa17546e36ebc05
 
 ```xml
   <system.diagnostics>
@@ -122,4 +115,5 @@ void Application_Error(object sender, EventArgs e)
 ```
 
 ----------------------------------------
+
 _Cheers!_

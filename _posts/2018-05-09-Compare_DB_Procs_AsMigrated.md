@@ -3,7 +3,7 @@ layout: post
 title: "Comparing Stored Procs in different databases"
 published: true
 ---
-Sometimes it's a pain with a Dev database and a Prod database to see where it is changed for migrating stored procs. 
+Sometimes it's a pain with a Dev database and a Prod database to see where it is changed for migrating stored procs.
 
 This can be quite slow, but really useful
 
@@ -32,19 +32,19 @@ FROM ProdDB.INFORMATION_SCHEMA.ROUTINES
 ```sql
 SELECT 'DevDB' AS tblName, *
 FROM (
-	SELECT * FROM @DevDB	
-	EXCEPT	
-	SELECT * FROM @ProdDB
-	) X
+    SELECT * FROM @DevDB
+    EXCEPT
+    SELECT * FROM @ProdDB
+    ) X
 
 UNION ALL
 
 SELECT 'ProdDB' AS tblName, *
 FROM (
-	SELECT * FROM @ProdDB	
-	EXCEPT	
-	SELECT * FROM @DevDB
-	) X
+    SELECT * FROM @ProdDB
+    EXCEPT
+    SELECT * FROM @DevDB
+    ) X
 ORDER BY [TYPE], NAME, [SCHEMA], [tblName]
 ```
 

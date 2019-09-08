@@ -12,12 +12,10 @@ was deleting, and Nick sent me this bat file that makes the delete process a lit
 ## Delete_Directory.bat ##
 
 ```bat
-
 del /f/s/q "C:\SomeDirectory" > nul
 rmdir /s/q "C:\SomeDirectory"
 
 pause
-
 ```
 
 ----------------------------------------
