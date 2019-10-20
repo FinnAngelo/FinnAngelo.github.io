@@ -10,17 +10,37 @@ The useful stuff I use with Docker
 ----------------------------------------
 
 + [Setup](#setup)
+  + [Install](#install)
   + [Change drive of hyper-v disks](#change-drive-of-hyper-v-disks)
   + [Change drive of docker images](#change-drive-of-docker-images)
 + [docker pull](#docker-pull)
 + [docker container](#docker-container)
 + [docker image](#docker-image)
 + [docker prune](#docker-prune)
++ [docker volume](#docker-volume)
++ [docker run](#docker-run)
 + [Credits](#credits)    
 
 ----------------------------------------
 
 ## Setup ##
+
+### Install ###
+
+Install Hyper-V - may require restart
+
+```powershell
+Enable-WindowsOptionalFeature -Online -FeatureName:Microsoft-Hyper-V -All
+```
+
+Install chocolatey:  
+<https://chocolatey.org/install>
+
+Install Docker
+
+```powershell
+choco install docker-desktop -y
+```
 
 ### Change drive of hyper-v disks ###
 
@@ -76,13 +96,24 @@ docker pull mcr.microsoft.com/windows/servercore/iis
 
 ```powershell
 docker container ls
+
+docker ps # Lists running containers
+docker kill ab1234cd # Kills container - useful with the -rm tag on the running container!
+docker ps -a # Lists all containers
+
+docker rm ab123cd # removes container
 ```
 ----------------------------------------
 
 ## docker image ##
 
+<https://docs.docker.com/engine/reference/commandline/image/>
+
 ```powershell
 docker image ls
+docker images
+docker image rm IMAGE
+docker rmi ab123cd # remove image
 
 docker image prune --all --force
 ```
@@ -105,6 +136,41 @@ docker image prune --all --force
 docker network ls
 # docker system prune --volumes #This is the nuclear option
 ```
+
+----------------------------------------
+
+## docker volume ##
+
+<https://docs.docker.com/engine/reference/commandline/volume/>
+
+```powershell
+docker run --help
+docker volume ls
+docker volume inspect
+docker volume prune
+docker volume rm
+```
+----------------------------------------
+
+## docker run ##
+
+<https://docs.docker.com/engine/reference/commandline/run/>
+
+```powershell
+docker run --help 
+```
+
+| Parameter               | Note
+|-------------------------|---------------------------------------------------
+| -d, --detach            | Run container in background and print container ID
+| -u, --user 0            | Username or UID - 0 is for root
+| -p, --publish 5901:5901 | Publish a container's port(s) to the host
+| -e, --env list VNC_RESOLUTION=1900x1175       | Set environment variables
+| --rm                    | Automatically remove the container when it exits
+| --name testme           | Assign a name to the container
+| -v, --volume /D/TempOnHost:/C/TempOnContainer |
+| -i, --interactive       | need -it to keep the docker container running! IIS doesn't need it
+| -t, --tty               | Allocate a pseudo-TTY, -it to use putty shell 
 
 ----------------------------------------
 
