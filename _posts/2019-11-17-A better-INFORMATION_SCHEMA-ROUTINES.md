@@ -2,7 +2,7 @@
 layout: post
 title: "A better INFORMATION_SCHEMA.ROUTINES"
 categories: sql 
-published: false
+published: true
 ---
 
 FYI: `INFORMATION_SCHEMA.ROUTINES` only pulls the first 4000 chars of a stored procedure.
