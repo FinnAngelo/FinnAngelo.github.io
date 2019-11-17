@@ -53,10 +53,15 @@ GO
 ```
 
 the CTE gets its ‘ROUTINES list from:
+
+```sql
 sp_helptext [INFORMATION_SCHEMA.ROUTINES]
+```
 
 ----------------------------------------
 
 ## Credits ##
+
+If you find this useful, go be nice to someone. Pay it forward.
 
 _Cheers!_
