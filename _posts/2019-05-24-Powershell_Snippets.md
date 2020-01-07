@@ -13,10 +13,24 @@ This will obviously update as I find more
 
 ----------------------------------------
 
++ [Comments and more](#Comments-and-more)
 + [Filesystem basics](#Filesystem-basics)
   + [Delete a folder](#Delete-a-folder)
   + [Test Net Framework installed](#Test-Net-Framework-installed)
 + [Credits](#Credits)
+
+----------------------------------------
+<a name="Comments-and-more"></a>
+## Comments and more ##
+
+[Comments and more in powershell](https://www.red-gate.com/simple-talk/sysadmin/powershell/comments-and-more-in-powershell/)
+
+This only works at the start of scripts, but is pretty cool
+
+```powershell
+#Requires -RunAsAdministrator
+#Requires -Version 5.0 
+```
 
 ----------------------------------------
 <a name="Filesystem-basics"></a>
