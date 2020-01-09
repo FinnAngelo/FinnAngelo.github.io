@@ -5,7 +5,7 @@ categories: sql
 published: true
 ---
 
-<a href="https://pagingfunmums.com/2017/11/02/diy-cereal-killer-halloween-costume/" title="DIY Cereal killer costume" style="float:right; margin-left:3em;"><img src="https://github.com/FinnAngelo/FinnAngelo.github.io/raw/master/_posts/images/DIY-Cereal-Killer-Halloween-Costume.jpg" alt="Cereal Killer" style="width:50%;"></a>
+<a href="https://pagingfunmums.com/2017/11/02/diy-cereal-killer-halloween-costume/" title="DIY Cereal killer costume" style="float:right; margin-left:3em;"><img src="https://github.com/FinnAngelo/FinnAngelo.github.io/raw/master/_posts/images/DIY-Cereal-Killer-Halloween-Costume.jpg" alt="Cereal Killer"></a>
 
 This 'Cereal Killer' joke was hilarious when I made it in the 90's, so I figure I can use it again... with better graphics this time.
 
