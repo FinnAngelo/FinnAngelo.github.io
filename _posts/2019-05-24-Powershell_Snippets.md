@@ -26,7 +26,7 @@ This will obviously update as I find more
 
 I think this could be useful in docker instances...?
 
-[Pureinfotech - Change account password with powershell](#https://pureinfotech.com/change-account-password-powershell-windows-10/)
+[Pureinfotech - Change account password with powershell](https://pureinfotech.com/change-account-password-powershell-windows-10/)
 
 ```powershell
 $Password = Read-Host "Enter the new password" -AsSecureString
