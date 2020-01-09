@@ -13,6 +13,7 @@ This will obviously update as I find more
 
 ----------------------------------------
 
++ [Change password](#Change-password)
 + [Comments and more](#Comments-and-more)
 + [Filesystem basics](#Filesystem-basics)
   + [Delete a folder](#Delete-a-folder)
@@ -20,7 +21,22 @@ This will obviously update as I find more
 + [Credits](#Credits)
 
 ----------------------------------------
-<a name="Comments-and-more"></a>
+
+## Change password ##
+
+I think this could be useful in docker instances...?
+
+[Pureinfotech - Change account password with powershell](#https://pureinfotech.com/change-account-password-powershell-windows-10/)
+
+```powershell
+$Password = Read-Host "Enter the new password" -AsSecureString
+
+$UserAccount = Get-LocalUser -Name "admin"
+$UserAccount | Set-LocalUser -Password $Password
+```
+
+----------------------------------------
+
 ## Comments and more ##
 
 [Comments and more in powershell](https://www.red-gate.com/simple-talk/sysadmin/powershell/comments-and-more-in-powershell/)
@@ -33,11 +49,9 @@ This only works at the start of scripts, but is pretty cool
 ```
 
 ----------------------------------------
-<a name="Filesystem-basics"></a>
+
 ## Filesystem basics ##
 
-----------------------------------------
-<a name="Delete-a-folder"></a>
 ### Delete a folder ###
 
 ```powershell
@@ -46,7 +60,6 @@ if (Test-Path -Path $Folder) {
 }
 ```
 
-<a name="Test-Net-Framework-installed"></a>
 ### Test Net Framework installed ###
 
 This is a bit crap
