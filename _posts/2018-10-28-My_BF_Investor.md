@@ -4,8 +4,8 @@ title: "Simple McPimple! Barefoot Investor and with less words"
 published: true
 ---
 <figure style="float:right; margin-left:3em; width:50%;">
-    <a href="https://pixabay.com/en/alpaca-smile-teeth-fur-funny-farm-985158/">
-        <img src="https://github.com/FinnAngelo/FinnAngelo.github.io/raw/master/_posts/images/alpaca-985158_960_720.jpg" alt="Alpaca"/>
+    <a href="https://www.thespreadsheetdad.com/book-review-the-barefoot-investor-scott-pape/">
+        <img src="https://github.com/FinnAngelo/FinnAngelo.github.io/raw/master/_posts/images/TheBarefootInvestor.jpg" alt="The Barefoot Investor"/>
     </a>
     <figcaption>Alpacas are not that interesting.</figcaption>
 </figure>
