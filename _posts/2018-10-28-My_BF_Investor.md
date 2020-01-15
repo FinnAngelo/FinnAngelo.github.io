@@ -7,7 +7,7 @@ published: true
     <a href="https://www.thespreadsheetdad.com/book-review-the-barefoot-investor-scott-pape/">
         <img src="https://github.com/FinnAngelo/FinnAngelo.github.io/raw/master/_posts/images/TheBarefootInvestor.jpg" alt="The Barefoot Investor"/>
     </a>
-    <figcaption>Alpacas are not that interesting.</figcaption>
+    <figcaption>Alpacas are not that interesting.<br/>This is what my first copy of the book looked like... I've given a couple away</figcaption>
 </figure>
 Most people know I'm a barefoot investor fan, and they know I wish Scott Pape's editor chopped 97% of the windbag words from his book.
 
