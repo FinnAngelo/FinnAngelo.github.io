@@ -13,6 +13,10 @@ published: true
 
 It will come to a surprise to no one that commiting secrets to Github is a bad thing.
 
+These methods here are using the Windows DPAPI which uses the Windows Indentity as keys to encrypt the secrets as files on the hard drive, so they can only be decrypted by the person logged in who created them.
+
+And they should be stored well away from the github folder! 
+
 ```powershell
 Set-StrictMode -Version Latest
 
