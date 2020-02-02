@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Powershell secrets so you don't commit them to github"
+title: "Powershell secrets so you don't commit them to GitHub"
 categories: powershell 
 published: true
 ---
@@ -11,7 +11,7 @@ published: true
     <figcaption>Shhhh...</figcaption>
 </figure>
 
-It will come to a surprise to no one that commiting secrets to Github is a bad thing.
+It will come to a surprise to no one that commiting secrets to GitHub is a bad thing.
 
 ----------------------------------------
 
@@ -20,6 +20,7 @@ It will come to a surprise to no one that commiting secrets to Github is a bad t
 + [Add CurrentUserAllHosts profile](#Add-CurrentUserAllHosts-profile)
 + [Set-MySecret and Get-MySecret](#Set-MySecret-and-Get-MySecret)
 + [Using the MySecret functions](#Using-the-MySecret-functions)
++ [Credits](#Credits)
 
 ----------------------------------------
 
