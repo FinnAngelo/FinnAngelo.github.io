@@ -13,14 +13,47 @@ published: true
 
 It will come to a surprise to no one that commiting secrets to Github is a bad thing.
 
-These methods here are using the Windows DPAPI which uses the Windows Indentity as keys to encrypt the secrets as files on the hard drive, so they can only be decrypted by the person logged in who created them.
+----------------------------------------
 
-And they should be stored well away from the github folder! 
+## TOC ##
+
++ [Add CurrentUserAllHosts profile](#Add-CurrentUserAllHosts-profile)
++ [Set-MySecret and Get-MySecret](#Set-MySecret-and-Get-MySecret)
++ [Using the MySecret functions](#Using-the-MySecret-functions)
+
+----------------------------------------
+
+## Add CurrentUserAllHosts profile ##
+
+I'm intending to use this for my Azure CLI learnin', so I want this secrets stuff available to me all the time.
+
+This is in my [Powershell Snippets](http://www.finnangelo.com/2019/05/24/Powershell_Snippets.html#Persistent-profile) article, but here it is again...
+
+```powershell
+if (!(Test-Path $Profile.CurrentUserAllHosts)) {
+    New-Item -Type file -Path $Profile.CurrentUserAllHosts -Force }
+```
+
+On my PC this is at `D:\Users\Jon\Documents\WindowsPowerShell\profile.ps1`
+
+----------------------------------------
+
+## Set-MySecret and Get-MySecret ## 
+
+These functions are using the Windows DPAPI.  
+This uses the Windows Indentity as keys (etc) to encrypt the secrets as files on the hard drive, so they can only be decrypted by the person logged in who created them.
+
+And as the secrets should be stored well away from the github folder, I put the encrypted files on some rando non-home drive.
 
 ```powershell
 Set-StrictMode -Version Latest
 
-function Set-Secret($secret, $filePath) {
+# ---------------------------------------------------
+# User Secrets
+# http://www.finnangelo.com/powershell/2020/02/02/Powershell_Secrets.html
+
+function Set-MySecret($key, $secret) {
+    $filePath = "G:\MyDpapi\"+$key+".txt"
     # https://blog.kloud.com.au/2016/04/21/using-saved-credentials-securely-in-powershell-scripts/
     $secureString = $secret | ConvertTo-SecureString -AsPlainText -Force 
     $secureStringText = $secureString | ConvertFrom-SecureString
@@ -29,50 +62,56 @@ function Set-Secret($secret, $filePath) {
     Set-Content -Path $filePath -Value $secureStringText
 }
 
-function Get-Secret($filePath) {  
+function Get-MySecret($key) {  
+    $filePath = "G:\MyDpapi\"+$key+".txt"
     # https://stackoverflow.com/questions/28352141/convert-a-secure-string-to-plain-text
     $secureStringText = Get-Content $filePath
     $secureString = $secureStringText | ConvertTo-SecureString
     $secret = (New-Object PSCredential "user", $secureString).GetNetworkCredential().Password
     return $secret
 }
+```
 
+## Using the MySecret functions ##
+
+```powershell
 Describe "Explore Setting Secrets for Powershell Modules" {
 
     Context "Check setting a secret" {
         It "When Set-Password, Then there is a new file" {
             #given
             $secret = "Howdy! I'm a secret!"
-            $now = [System.DateTime]::Now.ToString("yyyy-MM-dd+HH-mm-ss-ffff")
-            $filePath = "$env:LOCALAPPDATA\DpapiMe\Secret+$now.txt"
+            $key = [System.DateTime]::Now.ToString("yyyy-MM-dd+HH-mm-ss-ffff")
 
             #when
-            Set-Secret $secret $filePath
+            Set-MySecret $key $secret
 
             #then
-            $result = Test-Path $filePath
+            $result = Test-Path "G:\MyDpapi\$key.txt"
             $result | Should Be True
         }
     }
 
     Context "Check getting a secret" {
-        It "When Get-Password, Then the password comes from a file" {
+        It "When Get-MySecret, Then the secret comes from a file" {
             #given
-            $now = [System.DateTime]::Now.ToString("yyyy-MM-dd+HH-mm-ss-ffff")        
-            $secret = "Howdy! I'm a secret! I was set at $now!"
-            $filePath = "$env:LOCALAPPDATA\DpapiMe\Secret+$now.txt"
-            Set-Secret $secret $filePath
+            $key = [System.DateTime]::Now.ToString("yyyy-MM-dd+HH-mm-ss-ffff")        
+            $secret = "Howdy! I'm a secret! I was set at $key!"
+            Set-MySecret $key $secret
 
             #when
-            $result = Get-Secret $filePath
+            $result = Get-MySecret $key
 
             #then
             $result | Should Be $secret
         }
     }
 }
-
 ```
+
+And here is our pester tests passing:
+
+<img src="https://github.com/FinnAngelo/FinnAngelo.github.io/raw/master/_posts/images/MySecretTests.png" alt="Running 'Explore Setting Secrets for Powershell Modules' with success" />
 
 ## Credits ##
 
