@@ -22,6 +22,7 @@ This will obviously update as I find more
 + [Filesystem basics](#Filesystem-basics)
   + [Delete a folder](#Delete-a-folder)
   + [Test Net Framework installed](#Test-Net-Framework-installed)
++ [Persistent profile](#Persistent-profile)
 + [Credits](#Credits)
   + [Links](#Links)
 
@@ -114,6 +115,34 @@ Get-Childitem 'HKLM:\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full'
 #461814 is for Net472
 
 Can test with [mcr.microsoft.com/dotnet/framework/runtime:4.8](https://hub.docker.com/_/microsoft-dotnet-framework-runtime/)
+
+----------------------------------------
+
+## Persistent profile ##
+
+This is for all those snippets I want to always be available, like my user secrets stuff
+
++ [MS Powershell guy - understanding the six profiles](https://devblogs.microsoft.com/scripting/understanding-the-six-powershell-profiles/)
++ [Red-gate - persistent powershell](https://www.red-gate.com/simple-talk/sysadmin/powershell/persistent-powershell-the-powershell-profile/)
+
+### Adding a profile ###
+
+To make a new profile for `CurrentUserAllHosts`  
+This is at `%USERPROFILE%\Documents\WindowsPowerShell\profile.ps1` (but not really because my `Documents` folder isn't on my home drive...)
+
+```powershell
+if (!(Test-Path $Profile.CurrentUserAllHosts)) {
+    New-Item -Type file -Path $Profile.CurrentUserAllHosts -Force }
+```
+
+### Profile locations ###
+
+| Profile	                | Location
+|-------------------------|---------
+| AllUsersAllHosts        | $PsHome\profile.ps1
+| AllUsersCurrentHost	    | $PsHome\HostId_profile.ps1
+| CurrentUserAllHosts	    | $Home\Documents\WindowsPowerShell\profile.ps1
+| CurrentUserCurrentHost  | $Home\Documents\WindowsPowerShell\HostId_profile.ps1
 
 ----------------------------------------
 
