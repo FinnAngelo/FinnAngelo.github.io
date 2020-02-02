@@ -135,6 +135,8 @@ if (!(Test-Path $Profile.CurrentUserAllHosts)) {
     New-Item -Type file -Path $Profile.CurrentUserAllHosts -Force }
 ```
 
+Don't forget about the executionpolicy
+
 ### Profile locations ###
 
 | Profile	                | Location
