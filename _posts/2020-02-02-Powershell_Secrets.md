@@ -34,8 +34,6 @@ if (!(Test-Path $Profile.CurrentUserAllHosts)) {
     New-Item -Type file -Path $Profile.CurrentUserAllHosts -Force }
 ```
 
-On my PC this is at `D:\Users\Jon\Documents\WindowsPowerShell\profile.ps1`
-
 ----------------------------------------
 
 ## Set-MySecret and Get-MySecret ## 
@@ -44,6 +42,8 @@ These functions are using the Windows DPAPI.
 This uses the Windows Indentity as keys (etc) to encrypt the secrets as files on the hard drive, so they can only be decrypted by the person logged in who created them.
 
 And as the secrets should be stored well away from the github folder, I put the encrypted files on some rando non-home drive.
+
+On my PC this is at `D:\Users\Jon\Documents\WindowsPowerShell\profile.ps1`
 
 ```powershell
 Set-StrictMode -Version Latest
