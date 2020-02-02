@@ -111,7 +111,7 @@ Describe "Explore Setting Secrets for Powershell Modules" {
 
 And here is our pester tests passing:
 
-<img src="https://github.com/FinnAngelo/FinnAngelo.github.io/raw/master/_posts/images/MySecretTests.png" alt="Running 'Explore Setting Secrets for Powershell Modules' with success" />
+<img src="https://github.com/FinnAngelo/FinnAngelo.github.io/raw/master/_posts/images/MyTestsForPowershellSecrets.png" alt="Running 'Explore Setting Secrets for Powershell Modules' with success" />
 
 ## Credits ##
 
