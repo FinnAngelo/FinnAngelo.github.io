@@ -72,13 +72,15 @@ function Get-MySecret($key) {
 }
 ```
 
+----------------------------------------
+
 ## Using the MySecret functions ##
 
 ```powershell
 Describe "Explore Setting Secrets for Powershell Modules" {
 
     Context "Check setting a secret" {
-        It "When Set-Password, Then there is a new file" {
+        It "When Set-MySecret, Then there is a new file" {
             #given
             $secret = "Howdy! I'm a secret!"
             $key = [System.DateTime]::Now.ToString("yyyy-MM-dd+HH-mm-ss-ffff")
@@ -112,6 +114,8 @@ Describe "Explore Setting Secrets for Powershell Modules" {
 And here is our pester tests passing:
 
 <img src="https://github.com/FinnAngelo/FinnAngelo.github.io/raw/master/_posts/images/MyTestsForPowershellSecrets.png" alt="Running 'Explore Setting Secrets for Powershell Modules' with success" />
+
+----------------------------------------
 
 ## Credits ##
 
