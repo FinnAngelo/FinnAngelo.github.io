@@ -54,7 +54,7 @@ Set-StrictMode -Version Latest
 # http://www.finnangelo.com/powershell/2020/02/02/Powershell_Secrets.html
 
 function Set-MySecret($key, $secret) {
-    $filePath = "G:\MyDpapi\"+$key+".txt"
+    $filePath = "G:\MyDpapi\$key.txt"
     # https://blog.kloud.com.au/2016/04/21/using-saved-credentials-securely-in-powershell-scripts/
     $secureString = $secret | ConvertTo-SecureString -AsPlainText -Force 
     $secureStringText = $secureString | ConvertFrom-SecureString
@@ -64,7 +64,7 @@ function Set-MySecret($key, $secret) {
 }
 
 function Get-MySecret($key) {  
-    $filePath = "G:\MyDpapi\"+$key+".txt"
+    $filePath = "G:\MyDpapi\$key.txt"
     # https://stackoverflow.com/questions/28352141/convert-a-secure-string-to-plain-text
     $secureStringText = Get-Content $filePath
     $secureString = $secureStringText | ConvertTo-SecureString
