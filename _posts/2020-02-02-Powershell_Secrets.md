@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Powershell secrets so you don't commit them to GitHub"
+title: "Powershell secrets, so you don't commit them to GitHub"
 categories: powershell 
 published: true
 ---
