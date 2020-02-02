@@ -22,8 +22,8 @@ When developing my dirty goofball [this-will-never-get-committed](https://securi
 ## TOC ##
 
 + [Add CurrentUserAllHosts profile](#Add-CurrentUserAllHosts-profile)
-+ [Set-MySecret and Get-MySecret](#Set-MySecret-and-Get-MySecret)
-+ [Using the MySecret functions](#Using-the-MySecret-functions)
++ [Set-MyDevSecret and Get-MyDevSecret](#Set-MyDevSecret-and-Get-MyDevSecret)
++ [Using the MyDevSecret functions](#Using-the-MyDevSecret-functions)
 + [Credits](#Credits)
 
 ----------------------------------------
@@ -41,7 +41,7 @@ if (!(Test-Path $Profile.CurrentUserAllHosts)) {
 
 ----------------------------------------
 
-## Set-MySecret and Get-MySecret ## 
+## Set-MyDevSecret and Get-MyDevSecret ## 
 
 These functions are using the Windows DPAPI.  
 This uses the Windows Indentity as keys (etc) to encrypt the secrets as files on the hard drive, so they can only be decrypted by the person logged in who created them.
@@ -57,9 +57,8 @@ Set-StrictMode -Version Latest
 # User Secrets
 # http://www.finnangelo.com/powershell/2020/02/02/Powershell_Secrets.html
 
-function Set-MySecret($key, $secret) {
-    $filePath = "G:\MyDpapi\$key.txt"
-    # https://blog.kloud.com.au/2016/04/21/using-saved-credentials-securely-in-powershell-scripts/
+function Set-MyDevSecret($key, $secret) {
+    $filePath = "G:\MyDevSecret\$key.txt"
     $secureString = $secret | ConvertTo-SecureString -AsPlainText -Force 
     $secureStringText = $secureString | ConvertFrom-SecureString
 
@@ -67,9 +66,8 @@ function Set-MySecret($key, $secret) {
     Set-Content -Path $filePath -Value $secureStringText
 }
 
-function Get-MySecret($key) {  
-    $filePath = "G:\MyDpapi\$key.txt"
-    # https://stackoverflow.com/questions/28352141/convert-a-secure-string-to-plain-text
+function Get-MyDevSecret($key) {  
+    $filePath = "G:\MyDevSecret\$key.txt"
     $secureStringText = Get-Content $filePath
     $secureString = $secureStringText | ConvertTo-SecureString
     $secret = (New-Object PSCredential "user", $secureString).GetNetworkCredential().Password
@@ -79,35 +77,35 @@ function Get-MySecret($key) {
 
 ----------------------------------------
 
-## Using the MySecret functions ##
+## Using the MyDevSecret functions ##
 
 ```powershell
 Describe "Explore Setting Secrets for Powershell Modules" {
 
     Context "Check setting a secret" {
-        It "When Set-MySecret, Then there is a new file" {
+        It "When Set-MyDevSecret, Then there is a new file" {
             #given
             $secret = "Howdy! I'm a secret!"
             $key = [System.DateTime]::Now.ToString("yyyy-MM-dd+HH-mm-ss-ffff")
 
             #when
-            Set-MySecret $key $secret
+            Set-MyDevSecret $key $secret
 
             #then
-            $result = Test-Path "G:\MyDpapi\$key.txt"
+            $result = Test-Path "G:\MyDevSecret\$key.txt"
             $result | Should Be True
         }
     }
 
     Context "Check getting a secret" {
-        It "When Get-MySecret, Then the secret comes from a file" {
+        It "When Get-MyDevSecret, Then the secret comes from a file" {
             #given
             $key = [System.DateTime]::Now.ToString("yyyy-MM-dd+HH-mm-ss-ffff")        
             $secret = "Howdy! I'm a secret! I was set at $key!"
-            Set-MySecret $key $secret
+            Set-MyDevSecret $key $secret
 
             #when
-            $result = Get-MySecret $key
+            $result = Get-MyDevSecret $key
 
             #then
             $result | Should Be $secret
