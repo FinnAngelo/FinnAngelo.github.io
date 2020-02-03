@@ -13,9 +13,11 @@ published: true
 
 It will not surprise anyone that commiting secrets to GitHub is a bad thing.
 
+When developing my goofball [this-will-never-get-committed](https://securitytrails.com/blog/github-dorks) scripts, I want zero-risk for my secrets - things like logins to azure, connection strings for databases, ~~how I secretly like hawiian pizza~~, and anything I don't want the world to know.
+
 I have spent minutes looking on the googles, and I haven't found the exact equivalent of [the dotnet user secrets](https://docs.microsoft.com/en-us/aspnet/core/security/app-secret) for powershell.
 
-When developing my dirty goofball [this-will-never-get-committed](https://securitytrails.com/blog/github-dorks) scripts, I want zero-risk for my secrets; logins to azure, connection strings for databases, ~~how I like hawiian pizza~~, and anything I don't want the world to know.
+I have made this workaround with the expectation that there is probably a better solution, but I wasn't going to let that stop me from making sure _my_ secrets are safe while I am playing with other code.
 
 ----------------------------------------
 
