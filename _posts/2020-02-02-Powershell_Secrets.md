@@ -19,6 +19,9 @@ I have spent minutes looking on the googles, and I haven't found the exact equiv
 
 I have made this workaround with the expectation that there is probably a better solution, but I wasn't going to let that stop me from making sure _my_ secrets are safe while I am playing with other code.
 
+**UPDATE:** Naturally there is an [alpha release of the Microsoft.Powershell.SecretsManagement](https://devblogs.microsoft.com/powershell/secrets-management-development-release/) a couple of days after I publish this.  
+I'll be using this as soon as it comes out of prerelease... I'll update this post when this happens.
+
 ----------------------------------------
 
 ## TOC ##
