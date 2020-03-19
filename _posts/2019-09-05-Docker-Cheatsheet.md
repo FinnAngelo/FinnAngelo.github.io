@@ -19,6 +19,7 @@ The useful stuff I use with Docker
 + [docker prune](#docker-prune)
 + [docker volume](#docker-volume)
 + [docker run](#docker-run)
++ [mssql-server-windows-developer](#mssql-server-windows-developer)
 + [Credits](#credits)    
 
 ----------------------------------------
@@ -173,6 +174,22 @@ docker run --help
 | -t, --tty               | Allocate a pseudo-TTY, -it to use putty shell 
 
 ----------------------------------------
+
+## mssql-server-windows-developer ##
+
+I can never remember this, and it is really handy!  
+It looks like the image is at least 2 years old, but I'm using it anyways because I live life on the edge...
+
+[Octopus - Running SQL Server Developer in a Windows-based Docker Container](https://octopus.com/blog/running-sql-server-developer-install-with-docker)
+
+Here is the run goodness:
+
+```powershell
+docker pull microsoft/mssql-server-windows-developer
+docker run --rm --name SQLServer -d -p 1433:1433 -e sa_password=Password_01 -e ACCEPT_EULA=Y microsoft/mssql-server-windows-developer
+```
+
+And we can just use Sql Server Management Studio or [Azure Data Studio](https://docs.microsoft.com/en-us/sql/azure-data-studio/download-azure-data-studio?view=sql-server-ver15)... or heck [Database Browser Portable](https://portableapps.com/apps/development/database_browser_portable) to connect
 
 ## Credits ##
 
