@@ -19,8 +19,9 @@ I have [Powershell Snippets](http://www.finnangelo.com/2019/05/24/Powershell_Sni
 
 + [See table values in Debug on SQL](#See-table-values-in-Debug-on-SQL)
 + [Get a CSV Report from SSRS with an URL](#Get-a-CSV-Report-from-SSRS-with-an-URL)
-+ [Get Column types from a Select into a temp table](#Get-Column-types-from-a-Select-into-a-temp-table)
++ [Get Column types from a SELECT into a TEMP table](#Get-Column-types-from-a-SELECT-into-a-TEMP-table)
 + [Create model from TEMP table](#Create-model-from-TEMP-table)
++ [Sync tables using MERGE](#Sync-tables-using-MERGE)
 + [Credits](#Credits)
 
 ----------------------------------------
@@ -250,6 +251,73 @@ SELECT @result = @result + '
 
 PRINT @result
 ```
+
+----------------------------------------
+
+## Sync tables using MERGE ##
+
+I have not performance tested this - it's probabaly _really_ slow
+
++ <http://www.toplinestrategies.com/blogs/application-development/sync-data-changes-tsql-merge>
+
+Notice it includes the syntax for `OUTPUT`!
+
+```sql
+MERGE CustomerTarget AS t
+USING CustomerSource AS s
+	ON t.Email = s.Email
+WHEN MATCHED
+	AND (
+		t.FirstName != s.FirstName
+		OR t.LastName != s.LastName
+		OR t.Address != s.Address
+		OR t.City != s.City
+		OR t.STATE != s.STATE
+		OR t.PostalCode != s.PostalCode
+		OR t.Email != s.Email
+		)
+	THEN
+		UPDATE
+		SET t.FirstName = s.FirstName,
+			t.LastName = s.LastName,
+			t.Address = s.Address,
+			t.City = s.City,
+			t.STATE = s.STATE,
+			t.PostalCode = s.PostalCode,
+			t.Email = s.Email
+WHEN NOT MATCHED BY TARGET
+	THEN
+		INSERT (
+			FirstName,
+			LastName,
+			Address,
+			City,
+			STATE,
+			PostalCode,
+			Email
+			)
+		VALUES (
+			s.FirstName,
+			s.LastName,
+			s.Address,
+			s.City,
+			s.STATE,
+			s.PostalCode,
+			s.Email
+			)
+WHEN NOT MATCHED BY SOURCE
+	THEN
+		DELETE
+OUTPUT $ACTION AS Operation,
+	inserted.Email,
+	inserted.City,
+	inserted.STATE,
+	deleted.Email,
+	deleted.City,
+	deleted.STATE;
+```
+
+
 
 ----------------------------------------
 
