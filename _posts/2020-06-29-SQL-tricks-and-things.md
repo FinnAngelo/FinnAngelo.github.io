@@ -22,6 +22,8 @@ I have [Powershell Snippets](http://www.finnangelo.com/2019/05/24/Powershell_Sni
 + [Get Column types from a SELECT into a TEMP table](#Get-Column-types-from-a-SELECT-into-a-TEMP-table)
 + [Create model from TEMP table](#Create-model-from-TEMP-table)
 + [Sync tables using MERGE](#Sync-tables-using-MERGE)
++ [List ConnectionPools](#List-ConnectionPools)
++ [Truncate all tables in DB](#Truncate-all-tables-in-DB)
 + [Credits](#Credits)
 
 ----------------------------------------
@@ -256,7 +258,7 @@ PRINT @result
 
 ## Sync tables using MERGE ##
 
-I have not performance tested this - it's probabaly _really_ slow
+I haven't performance tested this - it's probabaly _really_ slow
 
 + <http://www.toplinestrategies.com/blogs/application-development/sync-data-changes-tsql-merge>
 
@@ -317,7 +319,49 @@ OUTPUT $ACTION AS Operation,
 	deleted.STATE;
 ```
 
+----------------------------------------
 
+## List ConnectionPools ##
+
++ <http://betav.com/blog/billva/2007/05/managing_and_monitoring_net_co.html>
+
+```sql
+SELECT S.spid, loginame, login_time, last_batch, status, hostname, program_name, cmd,
+(
+      select text from sys.dm_exec_sql_text(S.sql_handle)
+) as last_sql
+FROM sys.sysprocesses S
+where dbid > 0
+and DB_NAME(dbid) = 'MyDatabase'
+and loginame = 'DOMAIN\MYNAME'
+order by last_batch asc
+```
+
+----------------------------------------
+
+## Truncate all tables in DB ##
+
+This script basically 'resets' your database by removing all records from every table whilst keeping constraints intact and resetting identitys.
+
++ <http://blog.tboda.com/post/5-Useful-SQL-Server-Scripts.aspx>
+
+```sql
+-- Disable Constraints & Triggers
+EXEC sp_MSforeachtable 'ALTER TABLE ? NOCHECK CONSTRAINT ALL'
+
+EXEC sp_MSforeachtable 'ALTER TABLE ? DISABLE TRIGGER ALL'
+
+-- Perform delete operation on all table for cleanup
+EXEC sp_MSforeachtable 'DELETE ?'
+
+-- Enable Constraints & Triggers again
+EXEC sp_MSforeachtable 'ALTER TABLE ? CHECK CONSTRAINT ALL'
+
+EXEC sp_MSforeachtable 'ALTER TABLE ? ENABLE TRIGGER ALL'
+
+-- Reset Identity on tables with identity column
+EXEC sp_MSforeachtable 'IF OBJECTPROPERTY(OBJECT_ID(''?''), ''TableHasIdentity'') = 1 BEGIN DBCC CHECKIDENT (''?'',RESEED,0) END'
+```
 
 ----------------------------------------
 
