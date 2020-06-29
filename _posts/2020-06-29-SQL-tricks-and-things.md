@@ -48,17 +48,21 @@ Sometimes you need a lot of reports from <abbr title="SQL Server Reporting Serve
 + <http://stackoverflow.com/questions/1078863/passing-parameter-via-url-to-sql-server-reporting-service>
 + <http://msdn.microsoft.com/en-us/library/ms155391.aspx>
 
-The Url Format:
-```http://<server>/reportserver?/<path>/<report>&rs:Command=Render&rs:Format=CSV&<parameter>=<value>&<parameter>=<value>```
+The Url Format:  
+```
+http://<server>/reportserver?/<path>/<report>&rs:Command=Render&rs:Format=CSV&<parameter>=<value>&<parameter>=<value>
+```
 
 Example:  
-```http://blahblah.com/ReportServer?/Reports/GetThings&rs:Command=Render&rs:Format=CSV&StartDate=2014-01-01&EndDate=2015-01-01```
+```
+http://blahblah.com/ReportServer?/Reports/GetThings&rs:Command=Render&rs:Format=CSV&StartDate=2014-01-01&EndDate=2015-01-01
+```
 
 ----------------------------------------
 
 ## Get Column types from a Select into a temp table ##
 
-Sometimes you want a model from a sql `SELECT`, like for Dapper or something...
+Sometimes you want a model from a sql `SELECT`, like for [Dapper](https://github.com/StackExchange/Dapper) or something...
 
 + <http://stackoverflow.com/questions/8976414/get-structure-of-temp-table-like-generate-sql-script-and-clear-temp-table-for>
 
