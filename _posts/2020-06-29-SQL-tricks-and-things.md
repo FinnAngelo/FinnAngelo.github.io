@@ -69,6 +69,8 @@ Sometimes you want a model from a sql `SELECT`, like for [Dapper](https://github
 
 + <http://stackoverflow.com/questions/8976414/get-structure-of-temp-table-like-generate-sql-script-and-clear-temp-table-for>
 
+(Note to self - I have had this sql for quite a while, it may have typos etc; probably needs its own posting too)
+
 ```sql
 SELECT 'Have a nice day' AS Howdy
 	,GETDATE() AS Nowby
