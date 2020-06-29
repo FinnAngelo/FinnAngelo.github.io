@@ -20,6 +20,7 @@ I have [Powershell Snippets](http://www.finnangelo.com/2019/05/24/Powershell_Sni
 + [See table values in Debug on SQL](#See-table-values-in-Debug-on-SQL)
 + [Get a CSV Report from SSRS with an URL](#Get-a-CSV-Report-from-SSRS-with-an-URL)
 + [Get Column types from a Select into a temp table](#Get-Column-types-from-a-Select-into-a-temp-table)
++ [Create model from TEMP table](#Create-model-from-TEMP-table)
 + [Credits](#Credits)
 
 ----------------------------------------
@@ -56,6 +57,8 @@ Example:
 ----------------------------------------
 
 ## Get Column types from a Select into a temp table ##
+
+Sometimes you want a model from a sql `SELECT`, like for Dapper or something...
 
 + <http://stackoverflow.com/questions/8976414/get-structure-of-temp-table-like-generate-sql-script-and-clear-temp-table-for>
 
@@ -99,6 +102,149 @@ SELECT --*
 FROM tempdb.INFORMATION_SCHEMA.TABLES t
 INNER JOIN tempdb.INFORMATION_SCHEMA.COLUMNS c ON t.TABLE_NAME = c.TABLE_NAME
 WHERE t.TABLE_NAME LIKE '%TEMP%'
+```
+
+## Create model from TEMP table ##
+
+```sql
+---------------------------------------------------
+-- Makes MODEL and MapToMODEL extension
+---------------------------------------------------
+IF OBJECT_ID('tempdb..#TEMP') IS NOT NULL
+BEGIN
+	DROP TABLE #TEMP
+END
+
+SELECT TOP 1 *
+INTO #TEMP
+FROM SampleDB.dbo.TestTable
+
+--select * from INFORMATION_SCHEMA.COLUMNS c where c.TABLE_NAME =
+-- Don't forget to set RtClick > Query Options > Results > Text to 8192
+-- http://msdn.microsoft.com/en-au/library/ms179334%28v=sql.105%29.aspx
+-- http://stackoverflow.com/questions/1484147/get-list-of-computed-columns-in-database-table-sql-server
+DECLARE @classType VARCHAR(50) = 'TestTable'
+DECLARE @nameSpace VARCHAR(50) = 'Company.Module.Areas.HelloWorld.Models'
+DECLARE @result VARCHAR(max)
+---------------------------------------------------------------------
+DECLARE @TypeMapping TABLE (
+	SqlType VARCHAR(20)
+	, NetType VARCHAR(20)
+	)
+
+INSERT INTO @TypeMapping
+SELECT 'bigint', 'long'
+UNION SELECT 'binary', 'byte[]'
+UNION SELECT 'bit', 'bool'
+UNION SELECT 'char', 'string'
+UNION SELECT 'date', 'DateTime'
+UNION SELECT 'datetime', 'DateTime'
+UNION SELECT 'datetime2', 'DateTime'
+UNION SELECT 'DATETIMEOFFSET', 'DateTimeOffset'
+UNION SELECT 'decimal', 'decimal'
+UNION SELECT 'float', 'double'
+UNION SELECT 'int', 'int'
+UNION SELECT 'money', 'decimal'
+UNION SELECT 'nchar', 'string'
+UNION SELECT 'ntext', 'string'
+UNION SELECT 'numeric', 'decimal'
+UNION SELECT 'nvarchar', 'string'
+UNION SELECT 'real', 'single'
+UNION SELECT 'rowversion', 'byte[]'
+UNION SELECT 'smallint', 'short'
+UNION SELECT 'smallmoney', 'decimal'
+UNION SELECT 'sql_variant', 'object'
+UNION SELECT 'text', 'string'
+UNION SELECT 'time', 'TimeSpan'
+UNION SELECT 'tinyint', 'byte'
+UNION SELECT 'uniqueidentifier', 'Guid'
+UNION SELECT 'varbinary', 'byte[]'
+UNION SELECT 'varchar', 'string'
+---------------------------------------------------------------------
+-- Name mapping
+DECLARE @Fields TABLE (
+	IsRequired VARCHAR(20)
+	, StringLength VARCHAR(30)
+	, NetType VARCHAR(20)
+	, ColumnName VARCHAR(30)
+	, FieldName VARCHAR(30)
+	)
+
+INSERT INTO @Fields
+SELECT CASE ic.IS_NULLABLE
+		WHEN 'NO'
+			THEN '[Required]'
+		ELSE ''
+		END AS IsRequired
+	, CASE 
+		WHEN ic.Data_type IN ('char', 'nchar', 'nvarchar', 'varchar')
+			THEN '[StringLength(' + cast(ic.CHARACTER_MAXIMUM_LENGTH AS VARCHAR) + ')]'
+		ELSE ''
+		END AS StringLength
+	, tm.NetType + CASE 
+		WHEN ic.IS_NULLABLE = 'YES'
+			AND ic.Data_type NOT IN ('char', 'nchar', 'ntext', 'nvarchar', 'text', 'varchar')
+			THEN '?'
+		ELSE ''
+		END AS NetType
+	, ic.COLUMN_NAME AS ColumnName
+	, UPPER(SUBSTRING(ic.COLUMN_NAME,1,1))
+	+ SUBSTRING(ic.COLUMN_NAME,2,LEN(ic.COLUMN_NAME)-1) AS	FieldName
+
+FROM tempdb.INFORMATION_SCHEMA.TABLES t
+INNER JOIN tempdb.INFORMATION_SCHEMA.COLUMNS ic ON t.TABLE_NAME = ic.TABLE_NAME
+LEFT JOIN @TypeMapping AS tm ON tm.SqlType = ic.DATA_TYPE
+WHERE t.TABLE_NAME LIKE '%TEMP%'
+
+--SELECT * FROM @Fields
+
+---------------------------------------------------------------------
+SELECT @result = cast('// Generated from the SQL Server Tables
+// Because it would be crazy to write this by hand!
+using System;
+using System.ComponentModel.DataAnnotations;
+using System.Data;
+
+namespace ' + @nameSpace + '
+{' AS VARCHAR(max))
+
+SET @result = @result + '
+    public class ' + @classType + '
+    {'
+SELECT @result = @result + '
+        ' + f.IsRequired + f.StringLength + '
+        public ' + f.NetType + ' ' + f.FieldName + ' { get; set; }'
+FROM @Fields AS f
+
+---------------------------------------------------------------------
+SELECT @result = @result + '
+    }
+
+	//Needs to be external from mapped class, otherwise interferes with WebAPI
+	internal static partial class ' + @classType + 'Extensions
+	{
+	    public static ' + @classType + ' MapTo' + @classType + '(this IDataReader dataReader)
+		{
+		    ' + @classType + ' result = new ' + @classType + '();'
+
+---------------------------------------------------------------------
+-- Constructor mapping
+SELECT @result = @result + CASE 
+		WHEN f.IsRequired != ''
+			THEN '
+            result.' + f.FieldName + ' = (' + f.NetType + ')dataReader["' + f.ColumnName + '"];'
+		ELSE '
+            result.' + f.FieldName + ' = dataReader["' + f.ColumnName + '"] as ' + f.NetType + ';'
+		END
+FROM @Fields AS f
+SELECT @result = @result + '
+            return result;
+		}
+    }
+}	
+'
+
+PRINT @result
 ```
 
 ----------------------------------------
