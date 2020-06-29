@@ -23,6 +23,7 @@ This will obviously update as I find more
   + [Delete a folder](#Delete-a-folder)
   + [Test Net Framework installed](#Test-Net-Framework-installed)
 + [Persistent profile](#Persistent-profile)
++ [List all PCs on Domain](#List-all-PCs-on-Domain)
 + [Credits](#Credits)
   + [Links](#Links)
 
@@ -145,6 +146,17 @@ Don't forget about the executionpolicy
 | AllUsersCurrentHost	    | $PsHome\HostId_profile.ps1
 | CurrentUserAllHosts	    | $Home\Documents\WindowsPowerShell\profile.ps1
 | CurrentUserCurrentHost  | $Home\Documents\WindowsPowerShell\HostId_profile.ps1
+
+----------------------------------------
+
+## List all PCs on Domain ##
+
+```powershell
+#import-module ActiveDirectory
+#Get-Help Get-ADComputer -Full
+cls
+Get-ADComputer -Filter * -Property * | Format-Table Name,OperatingSystem,OperatingSystemServicePack,OperatingSystemVersion -Wrap –Auto #| Out-File 'Out-File.txt'
+```
 
 ----------------------------------------
 
