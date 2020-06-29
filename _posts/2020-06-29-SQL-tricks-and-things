@@ -19,6 +19,7 @@ I have [Powershell Snippets](http://www.finnangelo.com/2019/05/24/Powershell_Sni
 
 + [See table values in Debug on SQL](#See-table-values-in-Debug-on-SQL)
 + [Get a CSV Report from SSRS with an URL](#Get-a-CSV-Report-from-SSRS-with-an-URL)
++ [Get Column types from a Select into a temp table](#Get-Column-types-from-a-Select-into-a-temp-table)
 + [Credits](#Credits)
 
 ----------------------------------------
@@ -51,6 +52,54 @@ The Url Format:
 
 Example:  
 ```http://blahblah.com/ReportServer?/Reports/GetThings&rs:Command=Render&rs:Format=CSV&StartDate=2014-01-01&EndDate=2015-01-01```
+
+----------------------------------------
+
+## Get Column types from a Select into a temp table ##
+
++ <http://stackoverflow.com/questions/8976414/get-structure-of-temp-table-like-generate-sql-script-and-clear-temp-table-for>
+
+```sql
+SELECT 'Have a nice day' AS Howdy
+	,GETDATE() AS Nowby
+	,*
+INTO #myTempTable -- creates a new temp table
+FROM tMyTable -- some table in your database
+
+EXEC tempdb..sp_help '#myTempTable'
+
+DROP TABLE #myTempTable
+
+------------------------------------------------------
+IF OBJECT_ID('tempdb..#TEMP') IS NOT NULL
+BEGIN
+	DROP TABLE #TEMP
+END
+
+SELECT *
+INTO #TEMP
+FROM WHEREVER
+
+SELECT --*
+	',' + c.COLUMN_NAME + ' ' + UPPER(c.DATA_TYPE) + CASE 
+		WHEN c.DATA_TYPE IN (
+				'char'
+				,'varchar'
+				,'nvarchar'
+				)
+			THEN '(' + CAST(c.CHARACTER_MAXIMUM_LENGTH AS VARCHAR(10)) + ')'
+		WHEN c.DATA_TYPE IN ('numeric')
+			THEN '(' + CAST(c.NUMERIC_PRECISION AS VARCHAR(10)) + ',' + CAST(c.NUMERIC_PRECISION_RADIX AS VARCHAR(10)) + ')'
+		ELSE ''
+		END + CASE 
+		WHEN c.IS_NULLABLE = 'no'
+			THEN ' NOT NULL'
+		ELSE ''
+		END
+FROM tempdb.INFORMATION_SCHEMA.TABLES t
+INNER JOIN tempdb.INFORMATION_SCHEMA.COLUMNS c ON t.TABLE_NAME = c.TABLE_NAME
+WHERE t.TABLE_NAME LIKE '%TEMP%'
+```
 
 ----------------------------------------
 
