@@ -7,6 +7,7 @@ published: true
 The useful stuff I use with Docker  
 (ToDo: Get picture)
 
+**UPDATE: The install process has probably been updated; using the commands is probably the same though**
 ----------------------------------------
 
 + [Setup](#setup)
