@@ -24,6 +24,7 @@ This will obviously update as I find more
   + [Test Net Framework installed](#Test-Net-Framework-installed)
 + [Persistent profile](#Persistent-profile)
 + [List all PCs on Domain](#List-all-PCs-on-Domain)
++ [dotnet build](#dotnet-build)
 + [Credits](#Credits)
   + [Links](#Links)
 
@@ -158,6 +159,15 @@ cls
 Get-ADComputer -Filter * -Property * | Format-Table Name,OperatingSystem,OperatingSystemServicePack,OperatingSystemVersion -Wrap –Auto #| Out-File 'Out-File.txt'
 ```
 
+----------------------------------------
+
+## dotnet build ##
+
+```powershell
+$versionNumber = $(Get-Date -format 'yyMM.ddhh.mmss')
+dotnet build "E:\blah\MyProj.csproj" -p:Version=$versionNumber
+dotnet pack "E:\blah\MyProj.csproj" -p:PackageVersion=$versionNumber --no-build 
+```
 ----------------------------------------
 
 ## Credits ##
