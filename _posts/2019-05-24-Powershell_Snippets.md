@@ -21,6 +21,7 @@ This will obviously update as I find more
 + [Comments and more](#Comments-and-more)
 + [Filesystem basics](#Filesystem-basics)
   + [Delete a folder](#Delete-a-folder)
+  + [List all files](#List-all-files)
   + [Test Net Framework installed](#Test-Net-Framework-installed)
 + [Persistent profile](#Persistent-profile)
 + [List all PCs on Domain](#List-all-PCs-on-Domain)
@@ -102,6 +103,13 @@ This only works at the start of scripts, but is pretty cool
 if (Test-Path -Path $Folder) {
     Remove-Item $Folder -Recurse -Force
 }
+```
+
+### List all files
+
+```powershell
+Get-ChildItem -Path 'C:\Program Files (x86)\Microsoft Dynamics AX\60\Retail POS' -Recurse -File `
+| SELECT fullname | Out-String -Width 256 | sort fullname | Out-File -FilePath 'C:\Users\User\Desktop\RetailPOS_DEV.txt'
 ```
 
 ### Test Net Framework installed ###
