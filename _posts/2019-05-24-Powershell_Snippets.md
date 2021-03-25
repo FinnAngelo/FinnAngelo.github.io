@@ -108,8 +108,8 @@ if (Test-Path -Path $Folder) {
 ### List all files
 
 ```powershell
-Get-ChildItem -Path 'C:\Program Files (x86)\Microsoft Dynamics AX\60\Retail POS' -Recurse -File `
-| SELECT fullname | Out-String -Width 256 | sort fullname | Out-File -FilePath 'C:\Users\User\Desktop\RetailPOS_DEV.txt'
+Get-ChildItem -Path 'C:\SomeFolder\SomeSubFolder' -Recurse -File `
+| SELECT fullname | Out-String -Width 256 | sort fullname | Out-File -FilePath 'C:\Users\User\Desktop\RAllTheFilesAndFolders.txt'
 ```
 
 ### Test Net Framework installed ###
