@@ -109,7 +109,22 @@ if (Test-Path -Path $Folder) {
 
 ```powershell
 Get-ChildItem -Path 'C:\SomeFolder\SomeSubFolder' -Recurse -File `
-| SELECT fullname | Out-String -Width 256 | sort fullname | Out-File -FilePath 'C:\Users\User\Desktop\RAllTheFilesAndFolders.txt'
+| sort fullname | SELECT fullname | Out-String -Width 256 | Out-File -FilePath 'C:\Users\User\Desktop\RAllTheFilesAndFolders.txt'
+```
+
+or if you want to do stuff to the strings (because you are comparing build outputs perhaps?)
+
+```powershell
+
+$BuildThatWorksPath = "c:\WhatEva\BuildThatWorks"
+
+if (Test-Path -Path $BuildThatWorksPath + ".txt") {
+    Remove-Item $BuildThatWorksPath + ".txt"
+}
+
+Get-ChildItem -Path $BuildThatWorksPath -Recurse -File | sort fullname `
+ | % {$_.fullname.replace("$BuildThatWorksPath", "-") } | Out-String -Width 256 | Out-File -FilePath $BuildThatWorksPath + ".txt"
+
 ```
 
 ### Test Net Framework installed ###
