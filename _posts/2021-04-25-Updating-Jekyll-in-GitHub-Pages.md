@@ -43,6 +43,8 @@ Make a file called `SandBox.wsb` with this content:
 </Configuration>
 ```
 
+----------------------------------------
+
 ## Setup GIT with Chocolatey
 
 In the sandbox, run this in the Powershell ISE as steps
@@ -60,6 +62,8 @@ choco install git -y
 choco install tortoisegit -y
 ```
 
+----------------------------------------
+
 ## Install Ruby Dev tools and Jekyll
 
 - <https://jekyllrb.com/docs/installation/windows/>
@@ -70,6 +74,8 @@ choco install tortoisegit -y
 	- This is option 3 on the cmd window installer
 03. Install Jekyll with `gem install jekyll bundler` in a new cmd window
 	- Check with `jekyll -v`
+
+----------------------------------------
 
 ## Clone and backup your website
 
@@ -85,6 +91,8 @@ choco install tortoisegit -y
 	- `FinnAngelo.github.io.code-workspace` file
 	- `about.markdown` and `index.markdown` if you have changed them
 03. Move everything except the `.git` folder out
+
+----------------------------------------
 
 ## Make a new jekyll website
 
@@ -105,7 +113,6 @@ choco install tortoisegit -y
 03. Commit
 	- Check renames
 04. Push
-
 
 ----------------------------------------
 
