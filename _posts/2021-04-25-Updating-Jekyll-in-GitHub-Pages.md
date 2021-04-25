@@ -26,7 +26,8 @@ I don't have time to learn the ins-and-outs of Ruby and Jekyll, so here is my di
 
 ## Setup a Jekyll Sandbox
 
-I do this in a sandbox on Windows 10 because I dont really want Ruby on my day-to-day pc when I only use it every 18 months or so...
+I do this in a sandbox on Windows 10 because I dont really want Ruby on my day-to-day pc when I only use it every 18 months or so...  
+I am absolutely sure that this could be done in a Github-Codespace-container-thing and I'm really looking forward to updating this someday
 
 Make sure you have Win10 and Sandboxes enabled
 
