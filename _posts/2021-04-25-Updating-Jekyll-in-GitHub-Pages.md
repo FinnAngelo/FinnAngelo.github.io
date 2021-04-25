@@ -12,7 +12,7 @@ I don't have time to learn the ins-and-outs of Ruby and Jekyll, so here is my di
 
 ----------------------------------------
 
-## ToC
+## TL;DR
 
 + [Setup a Jekyll Sandbox](#Setup-a-Jekyll-Sandbox)
 + [Setup GIT with Chocolatey](#Setup-GIT-with-Chocolatey)
