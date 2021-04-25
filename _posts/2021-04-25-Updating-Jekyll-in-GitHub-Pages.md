@@ -8,7 +8,7 @@ published: true
 I was getting security warnings from my github pages commits from the dependabot about a kramdown dependency.  
 I thought it would be easy to fix, but nah, it was easier to just reinstall everything.
 
-I don't have time to learn the ins-and-outs of Ruby and Jekyll, so here is my dirty fix
+I don't have time to learn the ins-and-outs of Ruby and Jekyll, so here is my dirty (but long winded) fix...
 
 ----------------------------------------
 
@@ -27,11 +27,10 @@ I don't have time to learn the ins-and-outs of Ruby and Jekyll, so here is my di
 ## Setup a Jekyll Sandbox
 
 I do this in a sandbox on Windows 10 because I dont really want Ruby on my day-to-day pc when I only use it every 18 months or so...  
-I am absolutely sure that this could be done in a Github-Codespace-container-thing and I'm really looking forward to updating this someday
+I am absolutely sure that this could be done in a Github-Codespace-container-thing and I'm really looking forward to updating this someday.
 
-Make sure you have Win10 and Sandboxes enabled
-
-Make a file called `SandBox.wsb` with this content:
+01. Make sure you have Win10 and Sandboxes enabled.
+02. Make a file called `SandBox.wsb` with this content:
 
 ```xml
 <Configuration>
