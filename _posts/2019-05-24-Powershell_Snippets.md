@@ -26,6 +26,7 @@ This will obviously update as I find more
 + [Persistent profile](#Persistent-profile)
 + [List all PCs on Domain](#List-all-PCs-on-Domain)
 + [dotnet build](#dotnet-build)
++ [List all referenced assemblies in exe](#List-all-referenced-assemblies-in-exe)
 + [Credits](#Credits)
   + [Links](#Links)
 
@@ -191,6 +192,21 @@ $versionNumber = $(Get-Date -format 'yyMM.ddhh.mmss')
 dotnet build "E:\blah\MyProj.csproj" -p:Version=$versionNumber
 dotnet pack "E:\blah\MyProj.csproj" -p:PackageVersion=$versionNumber --no-build 
 ```
+
+----------------------------------------
+
+## List all referenced assemblies in exe
+
+I've been using this for wix setup to make sure I have the correct versions of files 
+
+```powershell
+$exe = "C:\Path\To\ExeOrDll.exe"
+$assembly = [System.Reflection.Assembly]::LoadFile($exe)
+$dependancies = $assembly.GetReferencedAssemblies() | Sort-Object Name
+
+Write-Output $dependancies
+```
+
 ----------------------------------------
 
 ## Credits ##
