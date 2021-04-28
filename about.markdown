@@ -10,5 +10,5 @@ My career has provided me the opportunity to work within several industries incl
 
 As a lead developer at Fred IT, I mentor and coach other developers, enjoy the collaboration of working in a SAFE environment and work on the on-going improvement of our code-base and related supporting documentation, in addition to improving our systems for pharmacists.
 
-For more info, check out my details at <www.linkedin.com/in/jon-finn-angelo-9a26883>
+For more info, check out my details at [my LinkedIn profile](www.linkedin.com/in/jon-finn-angelo-9a26883)
 
