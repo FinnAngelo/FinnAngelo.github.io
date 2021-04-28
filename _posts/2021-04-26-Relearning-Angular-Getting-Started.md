@@ -2,7 +2,7 @@
 layout: post
 title: "Updating Jekyll in GitHub Pages"
 categories: Jekyll 
-published: true
+published: false
 ---
 
 I was getting security warnings from my github pages commits from the dependabot about a kramdown dependency.  
