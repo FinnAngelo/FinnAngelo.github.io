@@ -197,7 +197,8 @@ dotnet pack "E:\blah\MyProj.csproj" -p:PackageVersion=$versionNumber --no-build
 
 ## List all referenced assemblies in exe
 
-I've been using this for wix setup to make sure I have the correct versions of files 
+I've been using this for wix setup to make sure I have the correct versions of files...  
+Remember that if the assembly is compiled to x86, you have to use the x86 version of the ISE/prompt
 
 ```powershell
 $exe = "C:\Path\To\ExeOrDll.exe"
