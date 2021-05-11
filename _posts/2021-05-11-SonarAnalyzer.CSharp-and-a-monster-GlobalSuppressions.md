@@ -12,9 +12,9 @@ I've been working with a new codebase and to ensure that it stays nice we are us
 ## TL;DR
 
 + [Links](#Links)
-+ [Add `Directory.Build.props` with references to `SonarAnalyser.CSharp` and the shared `GlobalSupressions.cs` file](#Add--Directory-Build-props--with-references-to--SonarAnalyser-CSharp-and-the-shared--GlobalSupressions-cs--file]
-+ [Add `GlobalSupression.cs` file](#Add--GlobalSupression-cs--file)
-+ [Generate the `GlobalSupressions.cs` file](#Generate-the--GlobalSupressions-cs--file)
++ [Add `Directory.Build.props` with references to `SonarAnalyser.CSharp` and the shared `GlobalSupressions.cs` file](#Add-Directory-Build-props-with-references-to-SonarAnalyser-CSharp-and-the-shared-GlobalSupressionscs--file]
++ [Add `GlobalSupression.cs` file](#add-globalsupressioncs-file")
++ [Generate the `GlobalSupressions.cs` file](#Generate-the-GlobalSupressionscs-file)
 + [Credits](#Credits)
 
 ----------------------------------------
