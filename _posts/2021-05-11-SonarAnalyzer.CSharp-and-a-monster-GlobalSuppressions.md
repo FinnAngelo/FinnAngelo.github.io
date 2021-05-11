@@ -11,11 +11,11 @@ I've been working with a new codebase and to ensure that it stays nice we are us
 
 ## TL;DR
 
-+ [Links](#Links)
-+ [Add `Directory.Build.props` with references to `SonarAnalyser.CSharp` and the shared `GlobalSupressions.cs` file](#Add-Directory-Build-props-with-references-to-SonarAnalyser-CSharp-and-the-shared-GlobalSupressionscs--file)
-+ [Add `GlobalSupression.cs` file](#add-globalsupressioncs-file)
-+ [Generate the `GlobalSupressions.cs` file](#Generate-the-GlobalSupressionscs-file)
-+ [Credits](#Credits)
+- [Links](#Links)
+- [Add `Directory.Build.props` with references to `SonarAnalyser.CSharp` and the shared `GlobalSupressions.cs` file](#add-directorybuildprops-with-references-to-sonaranalysercsharp-and-the-shared-globalsupressionscs-file)
+- [Generate the `GlobalSupressions.cs` file](#Generate-the-GlobalSupressionscs-file)
+- [Add `GlobalSupression.cs` file](#add-globalsupressioncs-file)
+- [Credits](#Credits)
 
 ----------------------------------------
 
@@ -50,6 +50,100 @@ Put this `Directory.Build.props` file in the same directory as the solution file
   </ItemGroup>
 
 </Project>
+```
+
+----------------------------------------
+
+## Generate the `GlobalSupressions.cs` file
+
+I generated the code for the `GlobalSupressions.cs` file from the [SonarAnalyzer.CSharp resource strings on GitHub](https://github.com/SonarSource/sonar-dotnet/blob/master/analyzers/src/SonarAnalyzer.CSharp/RspecStrings.resx)...  
+Only a crazy person would have done that manually!
+
+TBH, its a bit rougher than my usual code, but theoretically it should only be run once... 😆
+
+TODO: Add a filter so only the rules that are currently being broken are suppressed; the broken rules are found in the build output - I put it into Notepad++ and do a search for `error: s`
+
+```csharp
+using System;
+using System.IO;
+using System.Linq;
+using System.Text.RegularExpressions;
+using System.Xml.Linq;
+
+namespace TrashMe.MakeSionarAnalyserSuppressions
+{
+    static class Program
+    {
+        private const string SOLUTION_DIR = @"C:\Path\To\My\SonarSource\";
+        static void Main(string[] args)
+        {
+            string xmlString = File.ReadAllText(SOLUTION_DIR + "RspecStrings.resx");
+            XDocument XDoc = XDocument.Parse(xmlString);
+
+            var descriptionNodes = (
+                from xEl in XDoc.Descendants("data")
+                where xEl.FirstAttribute.Value.EndsWith("_Description")
+                select new
+                {
+                    CheckId = xEl.FirstAttribute.Value.Replace("_Description", string.Empty).Trim(),
+                    Description = Regex.Replace(
+                            xEl.Value.Substring(0, Math.Min(xEl.Value.Length, 150)), 
+                            @"\p{C}+", 
+                            string.Empty
+                        ).Replace(@"""", @"\""")
+                        .Trim(),
+                    xEl
+                }
+                ).ToList();
+
+            var categoryNodes = (
+                from xEl in XDoc.Descendants("data")
+                where xEl.FirstAttribute.Value.EndsWith("_Category")
+                select new
+                {
+                    CheckId = xEl.FirstAttribute.Value.Replace("_Category", string.Empty).Trim(),
+                    Category = xEl.Value.Trim(),
+                    xEl
+                }
+                ).ToList();
+
+            var typeNodes = (
+                from xEl in XDoc.Descendants("data")
+                where xEl.FirstAttribute.Value.EndsWith("_Type")
+                select new
+                {
+                    CheckId = xEl.FirstAttribute.Value.Replace("_Type", string.Empty).Trim(),
+                    Type = xEl.Value.Trim(),
+                    xEl
+                }
+                ).ToList();
+
+            var resultNodes =
+                from d in descriptionNodes
+                join c in categoryNodes
+                    on d.CheckId equals c.CheckId
+                join t in typeNodes
+                    on d.CheckId equals t.CheckId
+                orderby t.Type, c.Category, d.CheckId, d.Description
+                select new
+                {
+                    c.Category,
+                    d.CheckId,
+                    d.Description,
+                    Suppression = $"[assembly: SuppressMessage(\"{c.Category}\", \"{d.CheckId}: {d.Description}\", Justification = \"<Pending>\")]"
+                };
+
+
+            var result = string.Join(
+                    Environment.NewLine,
+                    resultNodes.Select(r => r.Suppression)
+                    );
+
+            Console.WriteLine(result);
+        }
+    }
+}
+
 ```
 
 ----------------------------------------
@@ -463,96 +557,6 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: SuppressMessage("Major Vulnerability", "S4564: ASP.Net has a feature to validate HTTP requests to prevent potentially dangerous content to perform a cross-site scripting (XSS) attack. There is", Justification = "<Pending>")]
 [assembly: SuppressMessage("Major Vulnerability", "S5773: During the deserialization process, the state of an object will be reconstructed from the serialized data stream which can contain dangerous oper", Justification = "<Pending>")]
 [assembly: SuppressMessage("Minor Vulnerability", "S2228: Debug statements are always useful during development. But include them in production code - particularly in code that runs client-side - and you", Justification = "<Pending>")]
-
-```
-
-----------------------------------------
-
-## Generate the `GlobalSupressions.cs` file
-
-I generated the code for the `GlobalSupressions.cs` file from the [SonarAnalyzer.CSharp resource strings on GitHub](https://github.com/SonarSource/sonar-dotnet/blob/master/analyzers/src/SonarAnalyzer.CSharp/RspecStrings.resx)...  
-Only a crazy person would have done that manually!
-
-```csharp
-using System;
-using System.IO;
-using System.Linq;
-using System.Text.RegularExpressions;
-using System.Xml.Linq;
-
-namespace TrashMe.MakeSionarAnalyserSuppressions
-{
-    static class Program
-    {
-        private const string SOLUTION_DIR = @"C:\Path\To\My\SonarSource\";
-        static void Main(string[] args)
-        {
-            string xmlString = File.ReadAllText(SOLUTION_DIR + "RspecStrings.resx");
-            XDocument XDoc = XDocument.Parse(xmlString);
-
-            var descriptionNodes = (
-                from xEl in XDoc.Descendants("data")
-                where xEl.FirstAttribute.Value.EndsWith("_Description")
-                select new
-                {
-                    CheckId = xEl.FirstAttribute.Value.Replace("_Description", string.Empty).Trim(),
-                    Description = Regex.Replace(
-                            xEl.Value.Substring(0, Math.Min(xEl.Value.Length, 150)), 
-                            @"\p{C}+", 
-                            string.Empty
-                        ).Replace(@"""", @"\""")
-                        .Trim(),
-                    xEl
-                }
-                ).ToList();
-
-            var categoryNodes = (
-                from xEl in XDoc.Descendants("data")
-                where xEl.FirstAttribute.Value.EndsWith("_Category")
-                select new
-                {
-                    CheckId = xEl.FirstAttribute.Value.Replace("_Category", string.Empty).Trim(),
-                    Category = xEl.Value.Trim(),
-                    xEl
-                }
-                ).ToList();
-
-            var typeNodes = (
-                from xEl in XDoc.Descendants("data")
-                where xEl.FirstAttribute.Value.EndsWith("_Type")
-                select new
-                {
-                    CheckId = xEl.FirstAttribute.Value.Replace("_Type", string.Empty).Trim(),
-                    Type = xEl.Value.Trim(),
-                    xEl
-                }
-                ).ToList();
-
-            var resultNodes =
-                from d in descriptionNodes
-                join c in categoryNodes
-                    on d.CheckId equals c.CheckId
-                join t in typeNodes
-                    on d.CheckId equals t.CheckId
-                orderby t.Type, c.Category, d.CheckId, d.Description
-                select new
-                {
-                    c.Category,
-                    d.CheckId,
-                    d.Description,
-                    Suppression = $"[assembly: SuppressMessage(\"{c.Category}\", \"{d.CheckId}: {d.Description}\", Justification = \"<Pending>\")]"
-                };
-
-
-            var result = string.Join(
-                    Environment.NewLine,
-                    resultNodes.Select(r => r.Suppression)
-                    );
-
-            Console.WriteLine(result);
-        }
-    }
-}
 
 ```
 
