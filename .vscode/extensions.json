@@ -1,0 +1,16 @@
+{
+    "recommendations": [
+      "bierner.github-markdown-preview",
+      // "dangmai.workspace-default-settings",
+      "esbenp.prettier-vscode",
+      "humao.rest-client",
+      // "jebbs.plantuml",
+      //"lhl2617.vslilypond",
+      // "ms-dotnettools.dotnet-interactive-vscode",
+      // "ms-vscode.live-server",
+      //"ms-dotnettools.dotnet-interactive-vscode",
+      "mushan.vscode-paste-image",
+      // "streetsidesoftware.code-spell-checker"
+          "stkb.rewrap"
+    ]
+  }

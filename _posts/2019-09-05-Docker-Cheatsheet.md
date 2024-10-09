@@ -10,74 +10,46 @@ The useful stuff I use with Docker
 **UPDATE: The install process has probably been updated; using the commands is probably the same though**
 ----------------------------------------
 
-+ [Setup](#setup)
-  + [Install](#install)
-  + [Change drive of hyper-v disks](#change-drive-of-hyper-v-disks)
-  + [Change drive of docker images](#change-drive-of-docker-images)
++ [Install](#install)
 + [docker pull](#docker-pull)
 + [docker container](#docker-container)
 + [docker image](#docker-image)
 + [docker prune](#docker-prune)
 + [docker volume](#docker-volume)
 + [docker run](#docker-run)
++ [webtop](#webtop)
 + [mssql-server-windows-developer](#mssql-server-windows-developer)
 + [Credits](#credits)    
 
 ----------------------------------------
 
-## Setup ##
+## Install ##
 
-### Install ###
+**Update: I had a bunch on hyper-v here, but it was quite out of date**
 
-Install Hyper-V - may require restart
+### Enable WSL2 ###
+
+- https://learn.microsoft.com/en-us/windows/wsl/install
+
+run this one as admin `powershell`
 
 ```powershell
-Enable-WindowsOptionalFeature -Online -FeatureName:Microsoft-Hyper-V -All
+wsl --version # is it installed?
+wsl --install
+wsl --version
 ```
 
-Install chocolatey:  
-<https://chocolatey.org/install>
+### Install chocolatey ###
 
-Install Docker
+- https://chocolatey.org/install
+
+### Install Docker ###
+
+- https://docs.docker.com/desktop/install/windows-install/
 
 ```powershell
 choco install docker-desktop -y
 ```
-
-### Change drive of hyper-v disks ###
-
-This is easier if you do it before installing docker so you don't have to move the `DockerDesktop.vhdx` hard disk
-
-Changing the drive does slow performance as my `D:` drive isn't an SSD, but my `C:` drive is always low on space!
-
-01. Stop docker
-02. create `D:\Users\Public\Public Documents\Hyper-V\Virtual hard disks`
-03. Cut/Paste docker hard disk `DockerDesktop.vhdx` from
-`C:\Users\Public\Documents\Hyper-V\Virtual Hard Disks`
-04. Open Hyper-V manager > Select PC > Actions pane > Hyper-V Settings...
-    + Virtual Hard Disks = `D:\Users\Public\Documents\Hyper-V\Virtual Hard Disks`
-05. Restart Docker
-06. Test with  
-    ```powershell
-    docker run -di --rm --name test mcr.microsoft.com/dotnet/framework/sdk
-    ```
-
-### Change drive of docker images ###
-
-<https://www.pbworks.net/change-docker-images-location-in-windows/>
-
-Do this before you download the first image, evem before the test above
-
-01. Purge all the images, because is messy to try move them
-02. Stop docker
-03. Create `D:\ProgramData\Docker`
-04. Edit `C:\ProgramData\Docker\config\daemon.json`
-05. Add `"graph": "D:\\ProgramData\\Docker"`
-06. Restart docker
-07. Test with 
-    ```powershell
-    docker pull mcr.microsoft.com/dotnet/framework/sdk
-    ```
 
 ----------------------------------------
 
@@ -88,6 +60,7 @@ Good images to have:
 ```powershell
 docker pull mcr.microsoft.com/dotnet/framework/sdk
 docker pull mcr.microsoft.com/windows/servercore/iis
+docker pull lscr.io/linuxserver/webtop:latest
 ```
 
 ----------------------------------------
@@ -173,6 +146,24 @@ docker run --help
 | -v, --volume /D/TempOnHost:/C/TempOnContainer |
 | -i, --interactive       | need -it to keep the docker container running! IIS doesn't need it
 | -t, --tty               | Allocate a pseudo-TTY, -it to use putty shell 
+
+----------------------------------------
+
+## webtop ##
+
+This is fun!
+
+- https://docs.linuxserver.io/images/docker-webtop
+- versions of linux instead of `latest`
+  - https://github.com/linuxserver/docker-webtop?tab=readme-ov-file#version-tags
+
+To run
+
+1. `docker pull lscr.io/linuxserver/webtop:latest`
+   - this is optional, but its nice to see it download
+2. run this:  
+   `docker run -d --name webtop -p 3000:3000 --restart unless-stopped lscr.io/linuxserver/webtop:latest`
+3. browse at <http://localhost:3000>
 
 ----------------------------------------
 

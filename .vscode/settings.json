@@ -1,0 +1,46 @@
+{
+    //VSCode
+    "editor.minimap.enabled": false,
+    "editor.rulers": [
+        80
+    ],
+    "files.autoSave": "afterDelay",
+    "git.enableSmartCommit": true,
+    "workbench.colorTheme": "Quiet Light",
+    //"workbench.colorTheme": "Default Light+ Experimental",
+
+    // Extensions
+    "markdownlint.config": {
+        "MD032": false, // Lists should be surrounded by blank lines
+        "MD034": false, // Bare URL used
+        "MD026": false, // no-trailing-punctuation: Trailing punctuation in heading
+    },
+
+    "pasteImage.namePrefix": "${currentFileNameWithoutExt}.",
+    "pasteImage.path": "${currentFileDir}/.images",
+    "pasteImage.defaultName": "YYMMDD-HHmmss",
+
+    "vslilypond.general.pathToLilypond": "/bin/lilypond",
+
+    //"editor.minimap.enabled": false,
+    "breadcrumbs.enabled": false,
+    "editor.glyphMargin": false,
+    "explorer.decorations.badges": false,
+    "explorer.decorations.colors": false,
+    "editor.fontLigatures": true,
+    //"files.autoSave": "afterDelay",
+    //"git.enableSmartCommit": true,
+    //"window.commandCenter": true,
+    "editor.renderWhitespace": "none",
+    "markdown.validate.enabled": true,
+    "markdown.updateLinksOnFileMove.enabled": "prompt",
+    
+    "rewrap.autoWrap.enabled": true,
+    "rewrap.doubleSentenceSpacing": true,
+    "rewrap.reformat": true,	
+    "rewrap.wrappingColumn": 80,
+	
+    "workbench.startupEditor": "none",
+    "workbench.editor.empty.hint": "hidden",
+    "editor.fontFamily": "'Cascadia Code', Consolas, 'Courier New', monospace"
+}
