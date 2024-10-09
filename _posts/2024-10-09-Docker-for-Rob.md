@@ -14,13 +14,13 @@ But before we go there, lets setup docker 😱
 
 ## TL;DR
 
-1. [What is docker anyways?](#What-is-docker-anyways)
-2. [Backup your stuff](#Backup-your-stuff)
-3. [Open prompt as admin](#Open-prompt-as-admin)
-4. [Install Chocolatey](#Install-Chocolatey)
-5. [Enable WSL](#Enable-WSL)
-6. [Install Docker Desktop](#Install-Docker-Desktop)
-7. The fun bit - [Test with WebTop!](#Test-with-WebTop)
+1. [What is docker anyways?](#what-is-docker-anyways)
+2. [Backup your stuff](#backup-your-stuff)
+3. [Open prompt as admin](#open-prompt-as-admin)
+4. [Install Chocolatey](#install-chocolatey)
+5. [Enable WSL2](#enable-wsl2)
+6. [Install Docker Desktop](#install-docker-desktop)
+7. The fun bit - [Test with WebTop!](#test-with-webtop)
 
 ----------------------------------------
 
@@ -53,7 +53,7 @@ admin prompt
 
 ## Install Chocolatey
 
-- https://chocolatey.org/install
+- <https://chocolatey.org/install>
 
 Just cut/paste this into your prompt:
 
@@ -67,7 +67,7 @@ Make sure you close the prompt window to set ... stuff
 
 ## Enable WSL2
 
-- https://learn.microsoft.com/en-us/windows/wsl/install
+- <https://learn.microsoft.com/en-us/windows/wsl/install>
 
 run this one as admin `powershell`
 
@@ -83,7 +83,7 @@ There _may_ be pre-requisites listed in the link... but probably not.
 
 ## Install Docker Desktop
 
-- https://docs.docker.com/desktop/install/windows-install/
+- <https://docs.docker.com/desktop/install/windows-install/>
 
 There _might_ be other pre-reqs for docker from the link?
 
@@ -101,9 +101,9 @@ choco install docker-desktop -y
 
 ## Test with WebTop
 
-- https://docs.linuxserver.io/images/docker-webtop
+- <https://docs.linuxserver.io/images/docker-webtop>
 - versions of linux instead of `latest`
-  - https://github.com/linuxserver/docker-webtop?tab=readme-ov-file#version-tags
+  - <https://github.com/linuxserver/docker-webtop?tab=readme-ov-file#version-tags>
 
 This is the fun bit!
 
@@ -124,7 +124,7 @@ Yep - its a freakin' desktop inside a container!
 
 ## All you ever need to know about Docker
 
-- https://www.finnangelo.com/2019/09/05/Docker-Cheatsheet.html
+- <https://www.finnangelo.com/2019/09/05/Docker-Cheatsheet.html>
 
 ----------------------------------------
 
