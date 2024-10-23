@@ -65,6 +65,14 @@ Make sure you close the prompt window to set ... stuff
 
 ----------------------------------------
 
+## Update: Windows 10 Home Pre-reqs for Docker
+
+Disclaimer: I havent tried this myself, but it looks like this is all you need to get it to work on Windows 10 Home!
+
+- https://cloud.theodo.com/en/blog/docker-windows-10
+
+----------------------------------------
+
 ## Enable WSL2
 
 - <https://learn.microsoft.com/en-us/windows/wsl/install>
