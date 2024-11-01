@@ -22,11 +22,11 @@ Its very complex... read on!
 
 ## Run Ollama in docker
 
-- https://ollama.com/blog/ollama-is-now-available-as-an-official-docker-image
-- https://hub.docker.com/r/ollama/ollama
+- <https://ollama.com/blog/ollama-is-now-available-as-an-official-docker-image>
+- <https://hub.docker.com/r/ollama/ollama>
 
 side note: Docker and Volumes - I can never remember this
-- https://forums.docker.com/t/whats-the-correct-way-to-mount-a-volume-on-docker-for-windows/58494/4
+- <https://forums.docker.com/t/whats-the-correct-way-to-mount-a-volume-on-docker-for-windows/58494/4>
 
 Powershell prompt
 
@@ -53,7 +53,7 @@ Install
 
 Models
 
-- https://ollama.com/library
+- <https://ollama.com/library>
 - i.e.
   - dolphin-mistral
   - llama3
