@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Chord Smasher v1.1</title>
+    <style>
+      :root {
+        --bg: #f4f4f4;
+        --fg: #111;
+        --panel: #fff;
+        --accent: #2563eb;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #101010;
+          --fg: #eee;
+          --panel: #1f1f1f;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--fg);
+        font-family: Arial, sans-serif;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      h1 {
+        padding: 10px;
+      }
+      .controls {
+        background: var(--panel);
+        padding: 10px;
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      button,
+      input[type="number"] {
+        padding: 8px;
+      }
+      .main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .current {
+        flex: 3;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .next {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-top: 1px solid #666;
+      }
+      .current-name {
+        font-size: min(22vw, 180px);
+        font-weight: bold;
+      }
+      .next-name {
+        font-size: min(8vw, 70px);
+        font-weight: bold;
+      }
+      img {
+        max-width: 260px;
+        max-height: 260px;
+        object-fit: contain;
+      }
+      .progress-wrap {
+        height: 16px;
+        background: #555;
+      }
+      .progress {
+        height: 100%;
+        width: 0;
+        background: var(--accent);
+      }
+      .stats {
+        background: var(--panel);
+        padding: 10px;
+        max-height: 180px;
+        overflow: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>chord smasher</h1>
+    <div class="controls">
+      <button id="start">Start</button>
+      <button id="pause">Pause</button>
+      <button id="stop">Stop</button>
+      <button id="sound">Sound: Off</button>
+      <button id="toggleStats">Show Stats</button>
+      <label>Seconds Per Chord (ms)</label>
+      <input
+        id="duration"
+        type="number"
+        min="1000"
+        max="30000"
+        step="0.1"
+        value="3000"
+      />
+      <input
+        id="slider"
+        type="range"
+        min="1000"
+        max="30000"
+        step="1"
+        value="3000"
+      />
+    </div>
+    <div class="main">
+      <div class="current">
+        <div id="currentName" class="current-name">-</div>
+        <img id="currentImg" hidden />
+      </div>
+      <div class="next">
+        <div id="nextName" class="next-name">-</div>
+        <img id="nextImg" hidden />
+      </div>
+    </div>
+    <div class="progress-wrap"><div id="progress" class="progress"></div></div>
+    <div id="stats" class="stats"></div>
+    <script>
+      const chords = [
+        //S1
+        { name: "Am" },
+        { name: "G" },
+        { name: "C" },
+        { name: "F" },
+
+        //S2
+        { name: "G7" },
+        { name: "C7" },
+        { name: "Dm" },
+
+        { name: "G7" },
+        { name: "C7" },
+        { name: "Dm" },
+
+        //G1
+        { name: "A" },
+        { name: "A7" },
+        { name: "E7" },
+        { name: "Gm" },
+        { name: "D" },
+
+        { name: "A" },
+        { name: "A7" },
+        { name: "E7" },
+        { name: "Gm" },
+        { name: "D" },
+
+        { name: "A" },
+        { name: "A7" },
+        { name: "E7" },
+        { name: "Gm" },
+        { name: "D" },
+
+        //G2
+        { name: "F♯m" },
+        { name: "Gm7" },
+        { name: "D7" },
+        { name: "Em" },
+        { name: "B♭" },
+        { name: "Cmaj7" },
+
+        { name: "F♯m" },
+        { name: "Gm7" },
+        { name: "D7" },
+        { name: "Em" },
+        { name: "B♭" },
+        { name: "Cmaj7" },
+
+        { name: "F♯m" },
+        { name: "Gm7" },
+        { name: "D7" },
+        { name: "Em" },
+        { name: "B♭" },
+        { name: "Cmaj7" },
+
+        { name: "F♯m" },
+        { name: "Gm7" },
+        { name: "D7" },
+        { name: "Em" },
+        { name: "B♭" },
+        { name: "Cmaj7" },
+
+        //G3
+        { name: "Bm" },
+        { name: "Dmaj7" },
+        { name: "Gmaj7" },
+        { name: "Fm" },
+        { name: "Em7" },
+        { name: "Edim7" },
+        { name: "B7" },
+
+        { name: "Bm" },
+        { name: "Dmaj7" },
+        { name: "Gmaj7" },
+        { name: "Fm" },
+        { name: "Em7" },
+        { name: "Edim7" },
+        { name: "B7" },
+
+        { name: "Bm" },
+        { name: "Dmaj7" },
+        { name: "Gmaj7" },
+        { name: "Fm" },
+        { name: "Em7" },
+        { name: "Edim7" },
+        { name: "B7" },
+
+        { name: "Bm" },
+        { name: "Dmaj7" },
+        { name: "Gmaj7" },
+        { name: "Fm" },
+        { name: "Em7" },
+        { name: "Edim7" },
+        { name: "B7" },
+
+        { name: "Bm" },
+        { name: "Dmaj7" },
+        { name: "Gmaj7" },
+        { name: "Fm" },
+        { name: "Em7" },
+        { name: "Edim7" },
+        { name: "B7" },
+
+        //??
+        { name: "Fmaj7" },
+        { name: "Dsus4" },
+        { name: "Csus4" },
+        { name: "B♭maj7" },
+
+        { name: "Fmaj7" },
+        { name: "Dsus4" },
+        { name: "Csus4" },
+        { name: "B♭maj7" },
+
+        { name: "Fmaj7" },
+        { name: "Dsus4" },
+        { name: "Csus4" },
+        { name: "B♭maj7" },
+
+        { name: "Fmaj7" },
+        { name: "Dsus4" },
+        { name: "Csus4" },
+        { name: "B♭maj7" },
+
+        { name: "Fmaj7" },
+        { name: "Dsus4" },
+        { name: "Csus4" },
+        { name: "B♭maj7" },
+
+        { name: "Fmaj7" },
+        { name: "Dsus4" },
+        { name: "Csus4" },
+        { name: "B♭maj7" },
+      ];
+      const counts = {};
+      chords.forEach((c) => (counts[c.name] = 0));
+      let current = null,
+        next = null,
+        total = 0,
+        timer = null,
+        paused = false,
+        soundOn = false,
+        startTime = 0,
+        activeDuration = 3000;
+      const AC = window.AudioContext || window.webkitAudioContext;
+      function validDuration() {
+        let v = parseFloat(duration.value);
+        if (isNaN(v)) return 3000;
+        return Math.min(30000, Math.max(1000, v));
+      }
+      function pick(exclude) {
+        let c;
+        do {
+          c = chords[Math.floor(Math.random() * chords.length)];
+        } while (exclude && c.name === exclude);
+        return c;
+      }
+      function img(el, name) {
+        el.hidden = false;
+        el.src = "images/" + name + ".png";
+        el.onerror = () => (el.hidden = true);
+      }
+      function render() {
+        currentName.textContent = current ? current.name : "-";
+        nextName.textContent = next ? next.name : "-";
+        if (current) img(currentImg, current.name);
+        else currentImg.hidden = true;
+        if (next) img(nextImg, next.name);
+        else nextImg.hidden = true;
+        renderStats();
+      }
+      function renderStats() {
+        stats.innerHTML =
+          "<b>Total Changes:</b> " +
+          total +
+          "<br><br>" +
+          Object.entries(counts)
+            .map(([k, v]) => k + ": " + v)
+            .join("<br>");
+      }
+      function beep() {
+        if (!soundOn) return;
+        const ctx = new AC();
+        const o = ctx.createOscillator();
+        const g = ctx.createGain();
+        o.connect(g);
+        g.connect(ctx.destination);
+        o.start();
+        g.gain.setValueAtTime(0.08, ctx.currentTime);
+        g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.12);
+        o.stop(ctx.currentTime + 0.12);
+      }
+      function schedule() {
+        activeDuration = validDuration();
+        startTime = Date.now();
+        clearTimeout(timer);
+        timer = setTimeout(advance, activeDuration);
+      }
+      function advance() {
+        current = next;
+        counts[current.name]++;
+        total++;
+        next = pick(current.name);
+        render();
+        beep();
+        schedule();
+      }
+      function startSession() {
+        clearTimeout(timer);
+        paused = false;
+        current = pick();
+        counts[current.name]++;
+        next = pick(current.name);
+        render();
+        schedule();
+      }
+      function pauseResume() {
+        if (!current) return;
+        if (!paused) {
+          paused = true;
+          clearTimeout(timer);
+        } else {
+          paused = false;
+          schedule();
+        }
+      }
+      function stopSession() {
+        clearTimeout(timer);
+        paused = false;
+        current = null;
+        next = null;
+        progress.style.width = "0%";
+        render();
+      }
+      start.onclick = startSession;
+      pause.onclick = pauseResume;
+      stop.onclick = stopSession;
+      sound.onclick = () => {
+        soundOn = !soundOn;
+        sound.textContent = "Sound: " + (soundOn ? "On" : "Off");
+      };
+      toggleStats.onclick = () => (stats.hidden = !stats.hidden);
+      duration.oninput = () => {
+        slider.value = isNaN(parseFloat(duration.value))
+          ? 3000
+          : duration.value;
+      };
+      slider.oninput = () => (duration.value = slider.value);
+      document.addEventListener("keydown", (e) => {
+        if (e.code === "Space") {
+          e.preventDefault();
+          pauseResume();
+        }
+      });
+      setInterval(() => {
+        if (!current || paused) return;
+        progress.style.width =
+          Math.min(100, ((Date.now() - startTime) / activeDuration) * 100) +
+          "%";
+      }, 30);
+      renderStats();
+    </script>
+  </body>
+</html>
