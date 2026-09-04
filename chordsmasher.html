@@ -136,10 +136,10 @@
     <script>
       const chords = [
         //S1
-        { name: "Am" },
-        { name: "G" },
-        { name: "C" },
-        { name: "F" },
+        { name: "Am<sub>2000</sub>" },
+        { name: "G<sub>0232</sub>" },
+        { name: "C<sub>0003</sub>" },
+        { name: "F<sub>2010</sub>" },
 
         //S2
         { name: "G7" },
@@ -299,8 +299,8 @@
         el.onerror = () => (el.hidden = true);
       }
       function render() {
-        currentName.textContent = current ? current.name : "-";
-        nextName.textContent = next ? next.name : "-";
+        currentName.innerHTML = current ? current.name : "-";
+        nextName.innerHTML = next ? next.name : "-";
         if (current) img(currentImg, current.name);
         else currentImg.hidden = true;
         if (next) img(nextImg, next.name);
@@ -324,7 +324,7 @@
         o.connect(g);
         g.connect(ctx.destination);
         o.start();
-        g.gain.setValueAtTime(0.08, ctx.currentTime);
+        g.gain.setValueAtTime(1, ctx.currentTime);
         g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.12);
         o.stop(ctx.currentTime + 0.12);
       }
