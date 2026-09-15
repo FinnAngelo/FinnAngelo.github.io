@@ -191,140 +191,41 @@ Edim7 {0101}
   <div id="stats" class="stats"></div>
   <script>
     const chords = [
-      //S1
-      {name: "Am<sub>2000</sub>"},
-      {name: "G<sub>0232</sub>"},
-      {name: "C<sub>0003</sub>"},
-      {name: "F<sub>2010</sub>"},
+    {name: "C<sub>0003</sub>"},
+    {name: "F<sub>2010</sub>"},
+    {name: "G<sub>0232</sub>"},
+    {name: "A<sub>2100</sub>"},
+    {name: "D<sub>2220</sub>"},
+    {name: "B♭<sub>3211</sub>"},
 
-      //S2
-      {name: "G7"},
-      {name: "C7"},
-      {name: "Dm"},
+    {name: "Am<sub>2000</sub>"},
+    {name: "Dm<sub>2210</sub>"},
+    {name: "Gm<sub>0231</sub>"},
+    {name: "Em<sub>0321</sub>"},
+    {name: "F♯m<sub>2130</sub>"},
+    {name: "Bm<sub>4222</sub>"},
+    {name: "Fm<sub>1013</sub>"},
+	
+    {name: "C7<sub>0001</sub>"},
+    {name: "G7<sub>0212</sub>"},
+    {name: "A7<sub>0100</sub>"},
+    {name: "E7<sub>1202</sub>"},
+    {name: "D7<sub>2223</sub>"},
+    {name: "B7<sub>2322</sub>"},
 
-      {name: "G7"},
-      {name: "C7"},
-      {name: "Dm"},
+    {name: "B♭maj7<sub>3210</sub>"},
+    {name: "Cmaj7<sub>0002</sub>"},
+    {name: "Dmaj7<sub>2224</sub>"},
+    {name: "Gmaj7<sub>0222</sub>"},
+    {name: "Fmaj7<sub>5500</sub>"},
 
-      //G1
-      {name: "A"},
-      {name: "A7"},
-      {name: "E7"},
-      {name: "Gm"},
-      {name: "D"},
+    {name: "Csus4<sub>0013</sub>"},
+    {name: "Dsus4<sub>0230</sub>"},
+	
+    {name: "Gm7<sub>0211</sub>"},
+    {name: "Em7<sub>0202</sub>"},
 
-      {name: "A"},
-      {name: "A7"},
-      {name: "E7"},
-      {name: "Gm"},
-      {name: "D"},
-
-      {name: "A"},
-      {name: "A7"},
-      {name: "E7"},
-      {name: "Gm"},
-      {name: "D"},
-
-      //G2
-      {name: "F♯m"},
-      {name: "Gm7"},
-      {name: "D7"},
-      {name: "Em"},
-      {name: "B♭"},
-      {name: "Cmaj7"},
-
-      {name: "F♯m"},
-      {name: "Gm7"},
-      {name: "D7"},
-      {name: "Em"},
-      {name: "B♭"},
-      {name: "Cmaj7"},
-
-      {name: "F♯m"},
-      {name: "Gm7"},
-      {name: "D7"},
-      {name: "Em"},
-      {name: "B♭"},
-      {name: "Cmaj7"},
-
-      {name: "F♯m"},
-      {name: "Gm7"},
-      {name: "D7"},
-      {name: "Em"},
-      {name: "B♭"},
-      {name: "Cmaj7"},
-
-      //G3
-      {name: "Bm"},
-      {name: "Dmaj7"},
-      {name: "Gmaj7"},
-      {name: "Fm"},
-      {name: "Em7"},
-      {name: "Edim7"},
-      {name: "B7"},
-
-      {name: "Bm"},
-      {name: "Dmaj7"},
-      {name: "Gmaj7"},
-      {name: "Fm"},
-      {name: "Em7"},
-      {name: "Edim7"},
-      {name: "B7"},
-
-      {name: "Bm"},
-      {name: "Dmaj7"},
-      {name: "Gmaj7"},
-      {name: "Fm"},
-      {name: "Em7"},
-      {name: "Edim7"},
-      {name: "B7"},
-
-      {name: "Bm"},
-      {name: "Dmaj7"},
-      {name: "Gmaj7"},
-      {name: "Fm"},
-      {name: "Em7"},
-      {name: "Edim7"},
-      {name: "B7"},
-
-      {name: "Bm"},
-      {name: "Dmaj7"},
-      {name: "Gmaj7"},
-      {name: "Fm"},
-      {name: "Em7"},
-      {name: "Edim7"},
-      {name: "B7"},
-
-      //??
-      {name: "Fmaj7"},
-      {name: "Dsus4"},
-      {name: "Csus4"},
-      {name: "B♭maj7"},
-
-      {name: "Fmaj7"},
-      {name: "Dsus4"},
-      {name: "Csus4"},
-      {name: "B♭maj7"},
-
-      {name: "Fmaj7"},
-      {name: "Dsus4"},
-      {name: "Csus4"},
-      {name: "B♭maj7"},
-
-      {name: "Fmaj7"},
-      {name: "Dsus4"},
-      {name: "Csus4"},
-      {name: "B♭maj7"},
-
-      {name: "Fmaj7"},
-      {name: "Dsus4"},
-      {name: "Csus4"},
-      {name: "B♭maj7"},
-
-      {name: "Fmaj7"},
-      {name: "Dsus4"},
-      {name: "Csus4"},
-      {name: "B♭maj7"},
+    {name: "Edim7<sub>0101</sub>"},
     ];
     const counts = {};
     chords.forEach((c) => (counts[c.name] = 0));
